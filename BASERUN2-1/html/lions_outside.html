@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/BASERUN2/css/lions_outside.css" />
+</head>
+<body>
+    <div class="div">
+      <header>
+        <div class="top">
+          <div class="baserun">BASERUN</div>
+          <div class="menu_list">
+            <a href="/BASERUN2/html/mainpage.html"><img src="/BASERUN2/asset/menu1.svg" /></a>
+            <img src="/BASERUN2/asset/menu2.svg" />
+            <img class="submenu3" src="/BASERUN2/asset/menu3.svg" />
+          </div>
+        </div>
+      </header>
+      <footer>
+        <div class="footer_div">
+          <div class="footer_line"></div>
+          <div class="footer_content">
+            문의: help@baserun.com | 070-1234-5678 | 운영시간: 평일 10:00 ~
+            18:00
+            <br />
+            © 2025 BASERUN Inc. All rights reserved. | 대표: 홍길동 |
+            사업자등록번호: 123-45-67890
+          </div>
+        </div>
+      </footer>
+      <section>
+         <div class="lions">
+            <div class="title">대구 라이온즈 파크</div>
+            <div class="food_list">
+                <a href="/BASERUN2/html/lions_inside.html" style="text-decoration: none;" >
+                <div class="unchecked_div">
+                    <div class="unchecked">라이온즈 파크 내부 먹거리</div>
+                </div>
+                </a>
+                <div class="checked_div">
+                    <div class="checked">라이온즈 파크 외부 먹거리</div>
+                </div>
+                <div class="unchecked_div ">
+                    <div class="unchecked">라이온즈 파크 근처 관광지</div>
+                </div>
+            </div>
+        </div>
+      </section>
+      <section>
+        <div class="food_outside">
+            <div class="title2">삼팬 픽! 맛집은?</div>
+            <div class="map"></div>
+        </div>
+       </section>
+    <div>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5a43d765a0dd2353f786282d1c1cf5eb&libraries=services"
+    ></script>
+    
+    <script>
+      var mapContainer = document.getElementsByClassName('map')[0], // 지도를 표시할 div 
+    mapOption = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 4 // 지도의 확대 레벨
+    };  
+
+    // 지도를 생성합니다    
+    var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+    // 주소-좌표 변환 객체를 생성합니다
+    var geocoder = new kakao.maps.services.Geocoder();
+
+    // 주소로 좌표를 검색합니다
+    geocoder.addressSearch('대구 수성구 야구전설로 1', function(result, status) {
+
+    // 정상적으로 검색이 완료됐으면 
+     if (status === kakao.maps.services.Status.OK) {
+
+        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+        var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png",
+        imageSize = new kakao.maps.Size(48, 51.75),
+         markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        var marker = new kakao.maps.Marker({
+            map: map,
+            position: coords,
+            image:markerImage
+        });
+
+        // 인포윈도우로 장소에 대한 설명을 표시합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            content: '<a href="https://place.map.kakao.com/12864272"><div style="width:150px;text-align:center;padding:6px 0;">대구삼성라이온즈파크</div><a>'
+        });
+        infowindow.open(map, marker);
+
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map.setCenter(coords);
+    } 
+});    
+      //  딕셔너리: key = 장소 이름, value = 주소
+        var locations = {
+          "일프로커피": "대구 수성구 알파시티1로42길 2 1층",
+          "란타이": "대구 수성구 알파시티1로42길 6"
+        };
+
+        // 커스텀 마커 이미지
+        var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png";
+        imageSize = new kakao.maps.Size(48, 51.75);
+        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+        for (let name in locations) {
+          let address = locations[name];
+
+          geocoder.addressSearch(address, function (result, status) {
+            if (status === kakao.maps.services.Status.OK) {
+              let coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+              // 마커 생성
+              let marker = new kakao.maps.Marker({
+                map: map,
+                position: coords,
+                image: markerImage,
+                title: name, // 마우스 오버 시 텍스트
+              });
+
+              // 정보창
+              let infowindow = new kakao.maps.InfoWindow({
+                content: `<div style="padding:5px;">${name}</div>`,
+              });
+
+              kakao.maps.event.addListener(marker, "click", function () {
+                infowindow.open(map, marker);
+              });
+            } else {
+              console.log(`주소 변환 실패: ${address}`);
+            }
+          });
+        };
+    </script>
+</body>
+</html>
