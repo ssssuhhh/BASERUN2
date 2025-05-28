@@ -31,6 +31,29 @@
         </div>
       </footer>
       <section>
+        <div class="submenu-div">
+          <div class="submenu">
+            <div class="submenu_title">세부 메뉴</div>
+            <div class="submenu-rect"></div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li>준비물 추천</li>
+              </ul>
+            </div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li>정규 리그 순위</li>
+              </ul>
+            </div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li>야구 기본 규칙</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
         <div class="where_div">
           <div class="title">
             <div class="button">
@@ -267,5 +290,15 @@
         </div>
       </section>
     </div>
+
+    <script>
+      const toggleButton = document.querySelector(".submenu3");
+      const submenu = document.querySelector(".submenu-div");
+
+      toggleButton.addEventListener("click", () => {
+        const isVisible = submenu.style.display === "flex";
+        submenu.style.display = isVisible ? "none" : "flex";
+      });
+    </script>
   </body>
 </html>
