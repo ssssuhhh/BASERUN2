@@ -80,7 +80,7 @@
   display: none;
   background: var(--primary-color-1d4d9f, #1d4d9f);
   padding: 79px 51px 79px 51px;
-
+  z-index: 10;
   flex-direction: column;
   gap: 0px;
   align-items: flex-start;
