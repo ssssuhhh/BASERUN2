@@ -15,6 +15,7 @@
             <img src="/BASERUN2/asset/menu1.svg" />
             <img src="/BASERUN2/asset/menu2.svg" />
             <img
+              id="menuToggle"
               class="submenu3"
               src="/BASERUN2/asset/menu3.svg"
               style="cursor: pointer"
@@ -35,7 +36,7 @@
         </div>
       </footer>
       <section>
-        <div class="submenu-div">
+        <div class="submenu-div" id="submenu">
           <div class="submenu">
             <div class="submenu_title">세부 메뉴</div>
             <div class="submenu-rect"></div>
@@ -294,12 +295,11 @@
         </div>
       </section>
     </div>
-
     <script>
-      const toggleButton = document.querySelector(".submenu3");
-      const submenu = document.querySelector(".submenu-div");
+      const menuIcon = document.getElementById("menuToggle");
+      const submenu = document.getElementById("submenu");
 
-      toggleButton.addEventListener("click", () => {
+      menuIcon.addEventListener("click", () => {
         const isVisible = submenu.style.display === "flex";
         submenu.style.display = isVisible ? "none" : "flex";
       });
