@@ -129,10 +129,16 @@
   position: relative;
   align-self: stretch;
 }
-a {
+.submenu_text a {
+  color: #ffffff;
   text-decoration: none;
-  color: inherit;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 30px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  font-weight: 800;
 }
+
 /*섹션시작*/
 .where_div {
   display: flex;
