@@ -129,7 +129,7 @@
   position: relative;
   align-self: stretch;
 }
-.submenu_text a {
+.submenu-div .submenu_text-span li a {
   color: #ffffff;
   text-decoration: none;
   font-family: "Inter-ExtraBold", sans-serif;
