@@ -129,8 +129,9 @@
   position: relative;
   align-self: stretch;
 }
-a {
+.a {
   text-decoration: none;
+  color: inherit;
 }
 /*섹션시작*/
 .where_div {
