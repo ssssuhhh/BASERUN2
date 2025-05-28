@@ -129,7 +129,9 @@
   position: relative;
   align-self: stretch;
 }
-
+a {
+  text-decoration: none;
+}
 /*섹션시작*/
 .where_div {
   display: flex;
