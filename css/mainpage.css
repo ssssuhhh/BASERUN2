@@ -4,7 +4,7 @@
 }
 .div {
   background: #f8f8f8;
-  height: 1314px;
+  height: 1217px;
   position: relative;
 }
 .top {
@@ -146,10 +146,10 @@
   gap: 20px;
   align-items: flex-start;
   width: fit-content;
+  justify-content: flex-start;
   position: absolute;
-  justify-content: center;
-  left: calc(50% - 413px);
-  top: 205.08px;
+  left: calc(50% - 412.93px);
+  top: 137px;
 }
 .title {
   display: flex;
@@ -244,7 +244,7 @@
   width: 846px;
   position: absolute;
   left: calc(50% - 413px);
-  top: 356.28px;
+  top: 288.19px;
 }
 .button2 {
   background: var(--primary-color-1d4d9f, #1d4d9f);
