@@ -22,6 +22,8 @@
         /></a>
         <button id="menu-btn" type="button">
           <img
+          id="menuToggle"
+              class="submenu3"
             src="/BASERUN2/asset/menu.svg"
             style="width: 27px; height: 30px"
           />
@@ -76,7 +78,7 @@
     </footer>
     <script>
       window.addEventListener("DOMContentLoaded", () => {
-        const menuIcon = document.getElementById("menu-btn");
+        const menuIcon = document.getElementById("menuToggle");
         const submenu = document.getElementById("submenu");
 
         let isOpen = false;
