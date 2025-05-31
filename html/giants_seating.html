@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>사직 야구장 자석 안내</title>
     <style>
         .div,
         .div * {
@@ -93,7 +93,68 @@
         object-fit: cover;
         aspect-ratio: 848.61/648;
         }
-
+        .submenu-div {
+  display: none;
+  background: var(--primary-color-1d4d9f, #1d4d9f);
+  padding: 79px 51px 79px 51px;
+  z-index: 10;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 495px;
+  height: 1314px;
+  position: absolute;
+  left: calc(50% - 17px);
+  top: 0px;
+}
+.submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 25.5px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.submenu_title {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 39px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  font-weight: 800;
+  position: relative;
+  align-self: stretch;
+}
+.submenu-rect {
+  background: #ffffff;
+  flex-shrink: 0;
+  width: 388px;
+  height: 6px;
+  position: relative;
+}
+.submenu_text {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 30px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  font-weight: 800;
+  position: relative;
+  align-self: stretch;
+}
+.submenu-div .submenu_text-span li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 30px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  font-weight: 800;
+}
         
     </style>
 </head>
@@ -104,7 +165,7 @@
           <div class="baserun">BASERUN</div>
           <div class="menu_list">
             <a href="mainpage.html"><img src="/BASERUN2/asset/menu1.svg" /></a>
-            <img src="/BASERUN2/asset/menu2.svg" />
+            <a href="userPage.html"><img src="/BASERUN2/asset/menu2.svg" /></a>
             <img
               id="menuToggle"
               class="submenu3"
