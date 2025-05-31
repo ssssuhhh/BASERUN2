@@ -21,6 +21,32 @@
       </button>
     </div>
   </header>
+  <div>
+        <div class="submenu-div" id="submenu">
+          <div class="submenu">
+            <div class="submenu_title">세부 메뉴</div>
+            <div class="submenu-rect"></div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li><a href="necessary1.html"> 준비물 추천 </a></li>
+              </ul>
+            </div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li>
+                  <a href="/BASERUN2/html/ranking.html">정규 리그 순위</a>
+                </li>
+              </ul>
+            </div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li><a href="/BASERUN2/html/rule.html">야구 기본 규칙</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div>
   <div id="content">
     <div id="btns">
       <button type="button" class="button" style="background-color: #1d4d9f; color: #fff; margin-right: 10px;">회원 정보</button>
@@ -48,5 +74,33 @@
   <script>
 
   </script>
+  <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.getElementById("menu-btn");
+        const submenu = document.getElementById("submenu");
+
+        let isOpen = false;
+
+        // 메뉴 아이콘 클릭하면 보이게
+        menuIcon.addEventListener("click", (e) => {
+          e.stopPropagation();
+          submenu.style.display = "flex";
+          isOpen = true;
+        });
+
+        // 바깥 클릭 시 숨기기
+        document.addEventListener("click", (e) => {
+          if (isOpen && !submenu.contains(e.target) && e.target !== menuIcon) {
+            submenu.style.display = "none";
+            isOpen = false;
+          }
+        });
+
+        // 메뉴 내부 클릭 시 닫히지 않도록
+        submenu.addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
+      });
+    </script>
 </body>
 </html>
