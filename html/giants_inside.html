@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/BASERUN2/css/giants_inside.css" />
+</head>
+<body>
+    <div class="div">
+      <header>
+        <div class="top">
+          <div class="baserun">BASERUN</div>
+          <div class="menu_list">
+            <a href="mainpage.html"><img src="/BASERUN2/asset/menu1.svg" /></a>
+            <img src="/BASERUN2/asset/menu2.svg" />
+            <img class="submenu3" src="/BASERUN2/asset/menu3.svg" />
+          </div>
+        </div>
+      </header>
+      <footer>
+        <div class="footer_div">
+          <div class="footer_line"></div>
+          <div class="footer_content">
+            문의: help@baserun.com | 070-1234-5678 | 운영시간: 평일 10:00 ~
+            18:00
+            <br />
+            © 2025 BASERUN Inc. All rights reserved. | 대표: 홍길동 |
+            사업자등록번호: 123-45-67890
+          </div>
+        </div>
+      </footer>
+     <section>
+         <div class="lions">
+            <div class="title">부산 사직 야구장</div>
+            <div class="food_list">
+                <div class="checked_div">
+                    <div class="checked">사직 야구장 먹거리</div>
+                </div>
+                <a href="giants_outside.html" style="text-decoration: none;">
+                    <div class="unchecked_div">
+                    <div class="unchecked">사직 야구장 외부 먹거리</div>
+                    </div>
+                </a>
+                <div class="unchecked_div ">
+                    <div class="unchecked">사직 야구장 근처 관광지</div>
+                </div>
+            </div>
+        </div>
+      </section>
+      <section>
+        <img class="img" src="/BASERUN2/asset/giants_inside_image.png" />
+        <div class="where">
+            <div class="title2">가까운 게이트가 어디신가요?</div>
+            <div class="floor_list">
+                <div class="floor1">
+                    <div class="_1">000~</div>
+                </div>
+                <div class="floor2">
+                    <div class="_2">100~</div>
+                </div>
+                <div class="floor3">
+                    <div class="_3">300~</div>
+                </div>
+                <div class="floor4">
+                    <div class="_4">700~</div>
+                </div>
+                <div class="floor5">
+                    <div class="_5">900~</div>
+                </div>
+            </div>
+            <div class="inside_content">
+                <div class="content_change">
+                    게이트를 선택해주세요!
+                </div>
+    </div>
+       
+       </section>
+    <div>
+
+    <script>
+      // 각 버튼별 내용 매핑
+      const contentMap = {
+       floor1: `043 : 남도포차<br>
+       031 : 포도 X 베이커스, 팝업샵<br>
+       032 : 버거샵, 트레져스<br>`,
+        floor2: `123 : 동래라거, 밀락당<br>
+        124 : 가온밀면 <br>
+        125 : 남도포차, 크리스피크림도넛, 파파존스<br>
+        126 : 땅땅치킨<br>
+        131 : 다리집, 동래라거, 정선수제닭강정<br>
+        132 : 프루토프루타<br>`,
+        floor3: `324 : 남도포차<br>
+        323 : 다리집<br>
+        326 : 보영만두<br>
+        331 : 땅땅치킨, 심바다, 스테프핫도그<br>`,
+        floor4: `724 : 보영만두`,
+        floor5: `923 : 투다리<br>
+        924 : 코카모메<br>`
+      };
+
+      // 버튼들 선택
+      const buttons = document.querySelectorAll(".floor_list > div");
+      const contentDiv = document.querySelector(".content_change");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // 모든 버튼에서 active 제거
+          buttons.forEach((btn) => btn.classList.remove("active"));
+
+          // 클릭한 버튼에 active 추가
+          button.classList.add("active");
+
+          // 내용 변경
+          const key = button.classList[0];
+          contentDiv.innerHTML = contentMap[key] || "내용이 없습니다.";
+        });
+      });
+    </script>
+      
+    
+
+
+</body>
+</html>

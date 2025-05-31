@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BASERUN</title>
+    <link rel="stylesheet" href="/BASERUN2/css/login.css" />
+  </head>
+  <body>
+    <h1>BASERUN</h1>
+    <form>
+      <div class="id">
+        <img src="/BASERUN2/asset/Group.svg" />
+        <input type="text" placeholder="아이디" required />
+      </div>
+      <div class="password">
+        <img src="/BASERUN2/asset/cil_baseball.svg" />
+        <input type="password" placeholder="비밀번호" required />
+      </div>
+      <div class="btn">
+        <button id="login" type="submit">로그인</button><br />
+        <a id="signup" href="signup.html">회원가입</a>
+      </div>
+    </form>
+    <script>
+      const login = document.getElementById("login");
+
+      login.addEventListener("click", function () {
+        event.preventDefault();
+        window.location.href = "../BASERUN2/html/mainpage.html"; // 메인 페이지 연결
+      });
+    </script>
+  </body>
+</html>

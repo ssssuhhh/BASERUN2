@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원 가입</title>
+    <link rel="stylesheet" href="/BASERUN2/css/signup.css" />
+  </head>
+  <body>
+    <header>
+      <h1>BASERUN</h1>
+    </header>
+    <form name="signup" method="post" onsubmit="return checkPassword()">
+      <section class="signup_section">
+        <span>이름</span><br />
+        <input
+          name="first_name"
+          type="text"
+          placeholder="닉네임을 입력해주세요"
+          required
+        />
+      </section>
+      <section class="signup_section">
+        <span>아이디</span><br />
+        <input
+          type="text"
+          name="username"
+          placeholder="아이디를 입력해주세요"
+          required
+        />
+      </section>
+      <section class="signup_section">
+        <span>비밀번호</span><br />
+        <input
+          id="password1"
+          type="password"
+          name="password1"
+          placeholder="비밀번호를 입력해주세요"
+          required
+        />
+      </section>
+      <section class="signup_section">
+        <span>비밀번호 확인</span><br />
+        <input
+          id="password2"
+          type="password"
+          name="password2"
+          placeholder="비밀번호를 재입력해주세요"
+          required
+        />
+      </section>
+      <button class="signup_btn" type="submit" style="margin-top: 20px">
+        회원 가입
+      </button>
+    </form>
+    <footer>
+      <hr />
+      <p class="footer-content">
+        문의: help@baserun.com | 070-1234-5678 | 운영시간: 평일 10:00 ~ 18:00<br />
+        © 2025 BASERUN Inc. All rights reserved. | 대표: 홍길동 |
+        사업자등록번호: 123-45-67890
+      </p>
+    </footer>
+    <script>
+      function checkPassword() {
+        const pw1 = document.getElementById("password1").value;
+        const pw2 = document.getElementById("password2").value;
+
+        if (pw1 !== pw2) {
+          alert("비밀번호가 다릅니다!");
+          return false;
+        }
+        window.location.href = "login.html";
+        return false; // 실제 서버가 없기 때문에 제대로 입력했어도 false 처리
+      }
+    </script>
+  </body>
+</html>

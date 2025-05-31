@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>준비물 추천</title>
+    <style>
+      body {
+        background-color: #f8f8f8;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 18.5em;
+        padding-right: 18.5rem;
+        min-width: 700px;
+      }
+      h1 {
+        color: #000;
+        text-align: center;
+        font-family: Inter;
+        font-size: 41.25px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 140%; /* 57.75px */
+        letter-spacing: -0.825px;
+      }
+      #head-btn {
+        display: flex;
+        align-items: center;
+        gap: 21px;
+      }
+      #menu-btn {
+        border: none;
+        background: none;
+        outline: none;
+        box-shadow: none;
+        font: inherit;
+        cursor: pointer;
+      }
+      #btns {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-left: 18.5rem;
+        padding-right: 19.5em;
+        min-width: 680px;
+      }
+      .button {
+        width: calc(100% / 2); /* 두 버튼 사이 여백 2rem 고려 */
+        height: 50px;
+        flex-shrink: 0;
+        flex-shrink: 0;
+        border: none;
+        border-radius: 30px;
+        box-shadow: 2px 2px 20px 10px rgba(209, 209, 209, 0.25);
+        text-align: center;
+        font-family: Inter;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%; /* 2.1rem */
+        letter-spacing: -0.03rem;
+      }
+      .button:hover {
+        background-color: #1d4d9f !important;
+        color: #fff !important;
+        cursor: pointer;
+      }
+      #btn-nec {
+        background: var(--primary-color-1-d-4-d-9-f, #1d4d9f);
+        color: #fff;
+      }
+      #btn-ses {
+        background: var(--primary-color-1-d-4-d-9-f, #fff);
+        color: #1d4d9f;
+      }
+      #container {
+        flex-shrink: 0;
+        border-radius: 30px;
+        background: #fff;
+        box-shadow: 2px 2px 20px 10px rgba(209, 209, 209, 0.25);
+        padding: 0.7rem 3rem;
+        margin-top: 2.02rem;
+        margin-left: 18.5rem;
+        margin-right: 18.5rem;
+        min-width: 600px;
+      }
+      ul {
+        list-style: none;
+        flex-shrink: 0;
+        color: var(--primary-color-1-d-4-d-9-f, #000);
+        font-family: Pretendard;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%; /* 33.6px */
+        letter-spacing: -0.48px;
+        padding: 0px;
+      }
+      li:not(:last-child) {
+        margin-bottom: 0.7rem;
+      }
+
+      h2 {
+        margin-bottom: 0.5rem;
+        font-size: 28px;
+        font-weight: 900;
+      }
+      span {
+        display: inline-block;
+        color: #1d4d9f;
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 0.5rem;
+      }
+      hr {
+        height: 4px;
+        flex-shrink: 0;
+        background-color: #1d4d9f;
+        border: none;
+        margin-left: 17rem;
+        margin-right: 17rem;
+        margin-top: 3rem;
+      }
+
+      .footer-content {
+        align-self: stretch;
+        color: #000;
+        text-align: center;
+        font-family: Inter;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%; /* 18.2px */
+        letter-spacing: -0.26px;
+        margin-left: 18.5rem;
+        margin-right: 18.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>BASERUN</h1>
+      <div id="head-btn">
+        <a href="mainpage.html"
+          ><img
+            src="/BASERUN2/asset/home.svg"
+            style="width: 27px; height: 30px"
+        /></a>
+        <a href="userPage.html"
+          ><img
+            src="/BASERUN2/asset/mypage.svg"
+            style="width: 27px; height: 30px"
+        /></a>
+        <button id="menu-btn" type="button">
+          <img
+            src="/BASERUN2/asset/menu.svg"
+            style="width: 27px; height: 30px"
+          />
+        </button>
+      </div>
+    </header>
+    <div id="btns">
+      <button type="button" class="button" id="btn-nec">필수품 추천</button>
+      <button type="button" class="button" id="btn-ses">계절별 추천</button>
+    </div>
+    <div id="container">
+      <h2>⚾️ 야구장 필수 준비물 목록 ⚾️</h2>
+      <ul>
+        <li>
+          <span>야구장 티켓 </span><br />
+          야구장 입장 시 필요(좌석 정보 미리 확인하여 좌석과 가까운 곳에서 티켓
+          확인 받기!)
+        </li>
+        <li>
+          <span>편안한 옷과 신발</span><br />
+          응원을 위해 편한 옷과 신발을 착용하는 것을 추천해요
+        </li>
+        <li>
+          <span>간식과 물 </span><br />
+          티켓 검사시 음료와 물을 제한하지 않으니 간단한 물과 과자같은 것은
+          챙겨가는 걸 추천!<br />
+          (야구장 안에도 편의점이 있으나 원하는 제품이 없을 수 있어요!)
+        </li>
+        <li>
+          <span>물티슈</span><br />
+          야구장의 별미는 바로 음식!! 근데 먹다 흘렸을 때.. 손이 더러워졌을 때..
+          물티슈가 있으면 좋겠죠? 좌석이 더럽다면 좌석을 닦을 때도 도움이 돼요!
+        </li>
+        <li>
+          <span>보조 배터리</span><br />
+          혹시 모를 배터리 방전 상황을 대비해 꼭꼭 챙겨주기~
+        </li>
+        <li>
+          <span>우산, 우비</span><br />
+          혹시 모를 비!!를 대비해 날씨 확인 후 챙겨주세요~ 특히 여름철에는 혹시
+          모르니 접이식 우산 챙겨주기!
+        </li>
+        <li>
+          <span>응원하는 팀의 유니폼, 응원도구</span><br />
+          응원은 템빨!! 응원하는 팀의 유니폼을 입고 신나게 응원을 즐기세요!!
+          (소곤소곤) 응원봉을 챙기면 몇배로 재밌다는 사실!
+        </li>
+      </ul>
+      <h2>🚫 야구장 반입 금지 목록 🚫</h2>
+      <ul>
+        <li>
+          <span>가방 및 소지품 규정</span><br />
+          1인당 가방은 1개만 허용되며, 세로 45cm X 폭 20cm 이하 크기여야 합니다!
+          아이스박스(천 소재 제외), 상자 등은 반입이 불가하니 유의해주세요!
+          (추가로 쇼핑백 1개 - 가로 30cm X 세로 50cm X 폭 12cm 이하 - 를 소지할
+          수 있습니다. )
+        </li>
+        <li>
+          <span>위험 물품 및 응원 도구 제한</span><br />
+          - 총기류, 도검류, 폭죽, 화약류, 인화성 물질(부탄가스 등) <br />
+          - 타인에게 위해를 가할 수 있는 칼, 가위 등의 도구 <br />
+          - 깃발, 막대, 삼각대 등 타격용으로 사용될 위험이 있는 물품 - 앰프,
+          대북 , 꽹가리, 부부젤라 등 소음 유발 응원 도구 <br />
+          - 구단과 합의되지 않은 현수막, 레이저 포인터, 풍선, 드론 - 킥보드,
+          돗자리, 휴대용 의자 등 다른 관람객의 통행을 방해하는 물품
+        </li>
+        <li>
+          <span>음식물 및 주류 반입 규정</span> <br />
+          <span style="font-size: 17px; color: #000; font-weight: 600"
+            >음식물 반입 기준</span
+          ><br />
+          - 유리병에 담긴 음식물은 반입 불가, 플라스틱 용기 권장<br />
+          - 자르지 않은 과일은 투척 위험으로 제한 가능, 손질하여 밀폐 용기에
+          담기 권장 <br />
+          - 냄새가 심하거나 과도한 양, 국물 있는 음식은 제한가능 <br />
+          - 유아용 젖병, 종이팩 음료, 의약품은 반입 가능<br />
+          <br />
+          <span style="font-size: 17px; color: #000; font-weight: 600"
+            >주류 반입 기준</span
+          >
+          <br />
+          - 맥주: 1인당 1L 이하 페트병 또는 캔 맥주 1개(또는 500ml 캔 2개)
+          허용<br />
+          - 소주 및 5% 초과 주류(막걸리, 청주, 와인 등) 반입 금지 <br />
+          - 유리병에 담긴 주류는 어떤 경우에도 반입 불가 <br />
+          - 경기장 내 주류 구매 시 1인당 구매량 제한 있을 수 있음 - 8회말 이후
+          주류 판매 중단될 수 있음
+        </li>
+        <li>
+          <span style="margin-top: 10px"
+            >각 구장 별로 세부 규정이 다를 수 있기에 방문 전 해당 구단
+            홈페이지에서 정확한 정보를 확인하시는 것을 적극 추천드립니다!</span
+          >
+        </li>
+      </ul>
+    </div>
+    <footer>
+      <hr />
+      <p class="footer-content">
+        문의: help@baserun.com | 070-1234-5678 | 운영시간: 평일 10:00 ~ 18:00<br />
+        © 2025 BASERUN Inc. All rights reserved. | 대표: 홍길동 |
+        사업자등록번호: 123-45-67890
+      </p>
+    </footer>
+    <script>
+      document.getElementById("btn-ses").onclick = () => {
+        location.href = "necessary2.html";
+      };
+    </script>
+  </body>
+</html>
