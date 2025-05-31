@@ -1,0 +1,114 @@
+body {
+  background-color: #f8f8f8;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h1 {
+  width: 322.5px;
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 41.25px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 140%; /* 57.75px */
+  letter-spacing: -0.825px;
+  margin-left: 161px;
+}
+#head-btn {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+  margin-right: 207px;
+}
+#menu-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-shadow: none;
+  font: inherit;
+  cursor: pointer;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+span {
+  color: #000;
+  font-family: Inter;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 37.8px */
+  letter-spacing: -0.54px;
+}
+input {
+  display: flex;
+  width: 378px;
+  padding: 13px 0px;
+  text-align: center;
+  gap: 9px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 10px;
+  border-radius: 11.25px;
+  background: var(--Netural-White, #fff);
+  font-family: Inter;
+  font-size: 22.5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 31.5px */
+  letter-spacing: -0.45px;
+}
+input::placeholder {
+  color: #ababab;
+}
+.signup_btn {
+  display: flex;
+  width: 378px;
+  height: 57px;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+  border-radius: 11.25px;
+  background: var(--primary-color-1-d-4-d-9-f, #1d4d9f);
+  cursor: pointer;
+  border: none;
+  color: var(--Netural-white, #fff);
+  text-align: center;
+  font-family: Inter;
+  font-size: 22.5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 31.5px */
+  letter-spacing: -0.45px;
+}
+hr {
+  width: 957px;
+  height: 4px;
+  flex-shrink: 0;
+  background-color: #1d4d9f;
+  border: none;
+  margin-top: 50px;
+}
+
+.footer-content {
+  align-self: stretch;
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 18.2px */
+  letter-spacing: -0.26px;
+}
