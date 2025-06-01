@@ -50,32 +50,95 @@
       </div>
     <div>
   <div id="content">
-    <div id="btns">
-      <button type="button" class="button" style="background-color: #1d4d9f; color: #fff; margin-right: 10px;">회원 정보</button>
-      <button type="button" class="button">개인 정보 수정</button>
-    </div>
-    <p class="information">이름: 베런</p>
-    <p class="information">이메일: ABC@gmail.com</p>
-    <p class="information">전화번호: 010-1234-5678</p>
-    <p class="information" id="choice">선택구단: 롯데 자이언츠</p>
-    <div id="group">
-      <div id="img">
-      <img src="/BASERUN2/asset/LotteGiants_logo.svg">
+      <div id="btns">
+        <button
+          type="button"
+          class="button"
+          style="background-color: #1d4d9f; color: #fff; margin-right: 10px"
+        >
+          회원 정보
+        </button>
+        <button type="button" class="button">개인 정보 수정</button>
       </div>
-      <button type="button" class="button">구단 변경</p>
-    </div>
+      <p class="information">이름: 베런</p>
+      <p class="information">이메일: ABC@gmail.com</p>
+      <p class="information">전화번호: 010-1234-5678</p>
+      <p class="information" id="choice">선택된 구단이 없습니다.</p>
+      <div id="group">
+        <div id="img"></div>
+        <select
+          type="button"
+          class="button"
+          style="appearance: none"
+          id="team-select"
+          onchange="changeTeam(this.value)"
+        >
+          <option value="">구단 선택</option>
+          <option value="kia">기아 타이거즈</option>
+          <option value="samsung">삼성 라이온즈</option>
+          <option value="lg">엘지 트윈스</option>
+          <option value="lotte">롯데 자이언츠</option>
+          <option value="nc">NC 다이노스</option>
+          <option value="kt">KT 위즈</option>
+          <option value="kiwoon">키움 히어로즈</option>
+          <option value="hanhwa">한화 이글스</option>
+          <option value="doosan">두산 베어스</option>
+          <option value="ssg">SSG 랜더스</option>
+        </select>
   </div>
   <footer>
-    <hr />
-    <p class="footer-content">
-      문의: help@baserun.com | 070-1234-5678 | 운영시간: 평일 10:00 ~ 18:00<br />
-      © 2025 BASERUN Inc. All rights reserved. | 대표: 홍길동 |
-      사업자등록번호: 123-45-67890
-    </p>
-  </footer>
-  <script>
+      <hr />
+      <p class="footer-content">
+        문의: help@baserun.com | 070-1234-5678 | 운영시간: 평일 10:00 ~ 18:00<br />
+        © 2025 BASERUN Inc. All rights reserved. | 대표: 홍길동 |
+        사업자등록번호: 123-45-67890
+      </p>
+    </footer>
+    <script>
+      function changeTeam(team) {
+        const nameMap = {
+          lotte: "롯데 자이언츠",
+          samsung: "삼성 라이온즈",
+          doosan: "두산 베어스",
+          kt: "KT 위즈",
+          kiwoon: "키움 히어로즈",
+          hanhwa: "한화 이글스",
+          lg: "엘지 트윈스",
+          nc: "NC 다이노스",
+          ssg: "SSG 랜더스",
+          kia: "기아 타이거즈",
+        };
 
-  </script>
+        const logoMap = {
+          lotte: "BASERUN2/asset/giants.svg",
+          doosan: "BASERUN2/asset/doosan.svg",
+          hanhwa: "BASERUN2/asset/eagles.svg",
+          kia: "BASERUN2/asset/kia.svg",
+          kiwoon: "BASERUN2/asset/kiwoom.svg",
+          kt: "BASERUN2/asset/kt.svg",
+          lg: "BASERUN2/asset/LG.svg",
+          nc: "BASERUN2/asset/NC.svg",
+          samsung: "BASERUN2/asset/samsung.svg",
+          ssg: "BASERUN2/asset/ssg.svg",
+        };
+
+        if (team && nameMap[team] && logoMap[team]) {
+          document.getElementById("choice").innerText =
+            "선택구단: " + nameMap[team];
+          const imgContainer = document.getElementById("img");
+          let logoImg = document.getElementById("team-logo");
+          // 없으면 새로 생성
+          if (!logoImg) {
+            logoImg = document.createElement("img");
+            logoImg.id = "team-logo";
+            imgContainer.appendChild(logoImg);
+          }
+          logoImg.src = logoMap[team];
+          logoImg.alt = nameMap[team];
+          document.getElementById("team-select").value = "";
+        }
+      }
+    </script>
   <script>
       window.addEventListener("DOMContentLoaded", () => {
         const menuIcon = document.getElementById("menuToggle");
