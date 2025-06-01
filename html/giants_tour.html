@@ -1,20 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/giants_tour.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BUSAN TOUR</title>
+    <style>
+      .div,
+      .div * {
+        box-sizing: border-box;
+      }
+      .div {
+        background: #f8f8f8;
+        height: 1580px;
+        position: relative;
+      }
+      .top {
+        display: flex;
+        flex-direction: row;
+        gap: 441.75px;
+        align-items: center;
+        justify-content: flex-start;
+        width: 957px;
+        height: 117.75px;
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        top: 19.62px;
+      }
+      .baserun {
+        color: #000000;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 41.25px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+        flex: 1;
+      }
+      .menu_list {
+        display: flex;
+        flex-direction: row;
+        gap: 21px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 192.75px;
+        height: 30px;
+        position: relative;
+        overflow: visible;
+        margin-right: 40px;
+      }
+      .footer_div {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+        width: 957px;
+        height: 97px;
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        bottom: 0px;
+      }
+      .footer_line {
+        background: var(--primary-color-1d4d9f, #1d4d9f);
+        flex-shrink: 0;
+        width: 957px;
+        height: 4px;
+        position: relative;
+      }
+      .footer_content {
+        color: #000000;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 13px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+        align-self: stretch;
+      }
+
+      .submenu-div {
+        display: none;
+        background: var(--primary-color-1d4d9f, #1d4d9f);
+        padding: 79px 51px 79px 51px;
+        z-index: 10;
+        flex-direction: column;
+        gap: 0px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 495px;
+        height: 1314px;
+        position: absolute;
+        left: calc(50% - 17px);
+        top: 0px;
+      }
+      .submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 25.5px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .submenu_title {
+        color: #ffffff;
+        text-align: left;
+        font-family: "Inter-ExtraBold", sans-serif;
+        font-size: 39px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        font-weight: 800;
+        position: relative;
+        align-self: stretch;
+      }
+      .submenu-rect {
+        background: #ffffff;
+        flex-shrink: 0;
+        width: 388px;
+        height: 6px;
+        position: relative;
+      }
+      .submenu_text {
+        color: #ffffff;
+        text-align: left;
+        font-family: "Inter-ExtraBold", sans-serif;
+        font-size: 30px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        font-weight: 800;
+        position: relative;
+        align-self: stretch;
+      }
+      .submenu-div .submenu_text-span li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Inter-ExtraBold", sans-serif;
+        font-size: 30px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        font-weight: 800;
+      }
+
+      .giants_tour {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 849px;
+        height: 918px;
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        top: 154px;
+      }
+      .title {
+        color: var(--primary-color-1d4d9f, #1d4d9f);
+        text-align: left;
+        font-family: "Inter-Black", sans-serif;
+        font-size: 48px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 900;
+        position: relative;
+        align-self: stretch;
+      }
+      .tour1 {
+        display: flex;
+        flex-direction: column;
+        gap: 21.31px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-self: stretch;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .tour_list_div {
+        background: #1d4d9f;
+        border-radius: 14.21px;
+        padding: 6.39px 14.92px 6.39px 14.92px;
+        display: flex;
+        flex-direction: row;
+        gap: 5.68px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 144.93px;
+        height: 32.68px;
+        position: relative;
+        box-shadow: 1.42px 1.42px 14.21px 2.84px rgba(209, 209, 209, 0.25);
+      }
+      .tour_list {
+        color: #ffffff;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 20.866107940673828px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+      }
+
+      .tour_list_text_div {
+        background: #ffffff;
+        border-radius: 14.21px;
+        padding: 11px 46px 42px 46px;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        align-items: flex-start;
+        justify-content: center;
+        align-self: stretch;
+        flex-shrink: 0;
+        height: 119px;
+        position: relative;
+        box-shadow: 2.84px 2.84px 14.21px 0px rgba(248, 248, 248, 0.25);
+        overflow-y: auto;
+      }
+
+      .tour_list_text {
+        color: #000000;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 18.866107940673828px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+        width: 757px;
+      }
+      .tour2 {
+        display: flex;
+        flex-direction: column;
+        gap: 21.31px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-self: stretch;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .tour3 {
+        display: flex;
+        flex-direction: column;
+        gap: 21.31px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-self: stretch;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .tour {
+        display: flex;
+        flex-direction: column;
+        gap: 21.31px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-self: stretch;
+        flex-shrink: 0;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
     <div class="div">
       <header>
         <div class="top">
           <div class="baserun">BASERUN</div>
           <div class="menu_list">
-            <a href="mainpage.html"><img src="/asset/menu1.svg" /></a>
-            <img src="/asset/menu2.svg" />
-            <img class="submenu3" src="/asset/menu3.svg" />
+            <a href="mainpage.html"><img src="/BASERUN2/asset/menu1.svg" /></a>
+            <a href="userPage.html"><img src="/BASERUN2/asset/menu2.svg" /></a>
+            <img
+              id="menuToggle"
+              class="submenu3"
+              src="/BASERUN2/asset/menu3.svg"
+              style="cursor: pointer"
+            />
           </div>
         </div>
       </header>
@@ -30,10 +295,194 @@
           </div>
         </div>
       </footer>
-      <section>
-        
-      </section>
-    <div>
-</body>
-</html>
+      <div>
+        <div class="submenu-div" id="submenu">
+          <div class="submenu">
+            <div class="submenu_title">세부 메뉴</div>
+            <div class="submenu-rect"></div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li><a href="necessary1.html"> 준비물 추천 </a></li>
+              </ul>
+            </div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li>
+                  <a href="/BASERUN2/html/ranking.html">정규 리그 순위</a>
+                </li>
+              </ul>
+            </div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li><a href="/BASERUN2/html/rule.html">야구 기본 규칙</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section>
+      <div class="giants_tour">
+        <div class="title">부산 사직 야구장</div>
+        <div class="tour1">
+          <div class="tour_list_div">
+            <div class="tour_list">서면/전포</div>
+          </div>
+          <div class="tour_list_text_div">
+            <div class="tour_list_text">
+              부산의 중심, 젊음의 거리 서면<br />
+              <br />
+              부산 여행을 계획하고 있다면 절대 빼놓을 수 없는 곳이 바로
+              서면(Seomyeon)입니다. 서면은 부산의 교통, 쇼핑, 먹거리, 그리고
+              밤문화를 모두 즐길 수 있는 도심 속의 복합 문화 중심지입니다. 🎡<br />
+              <br />
+              서면 젊음의 거리 : 서면역 1번 출구에서 나와 걷다 보면 마주하게
+              되는 이 거리에는 의류, 액세서리, 화장품 가게들이 빽빽히 들어서
+              있어 구경만 해도 시간 가는 줄 모릅니다. 거리 공연과 푸드트럭도
+              자주 열려 활기찬 분위기를 자아냅니다. <br />
+              <br />
+              전포카페거리 : (전포동 카페거리) 감성 가득한 카페들과 인테리어
+              숍이 줄지어 있는 골목입니다. 인스타 감성의 카페부터 독특한
+              디저트숍까지 다양해, 커피 한 잔과 함께 여유로운 시간을 보내기에
+              제격입니다.
+            </div>
+          </div>
+        </div>
+        <div class="tour2">
+          <div class="tour_list_div">
+            <div class="tour_list">부산 시민 공원</div>
+          </div>
+          <div class="tour_list_text_div">
+            <div class="tour_list_text">
+              도심 속 힐링 공간, 부산 시민공원 <br />
+              <br />
+              부산의 중심지인 서면과 가까운 곳에 자리한 부산 시민공원(Busan
+              Citizens Park)은 부산 시민들의 쉼터이자, 여행자들에게도 여유를
+              선사하는 특별한 공간입니다. 총면적 약 47만㎡의 넓은 부지에 자연,
+              예술, 역사, 체험이 어우러진 복합 문화공원으로, 한 번쯤 꼭 들러볼
+              만한 명소입니다. <br />
+              <br />
+              사계절 정원과 산책로 울창한 나무와 계절마다 피어나는 꽃들로 가득한
+              산책길은 마치 숲속을 걷는 듯한 느낌을 줍니다. 봄엔 벚꽃, 여름엔
+              초록, 가을엔 단풍이 장관을 이루며 사진 찍기 좋은 포인트도 많아요.
+              물놀이터 & 분수광장 아이들이 뛰어놀 수 있는 물놀이터와 여름철
+              시원하게 분수가 뿜어져 나오는 광장은 가족 여행자에게 인기
+              만점입니다. 해 질 무렵이면 조명이 더해져 로맨틱한 분위기도 느낄 수
+              있습니다.<br />
+              <br />
+              역사 전시관 (옛 미군기지 이야기) : 이곳은 과거 미군기지였던 터에
+              조성된 공원으로, 공원 곳곳에는 당시의 건물과 역사를 알 수 있는
+              전시 공간이 마련되어 있어 단순한 공원을 넘어 역사 교육의 장소로도
+              가치가 있습니다. <br />
+              <br />
+              야외 공연장 & 문화 프로그램 : 주말이면 음악 공연, 플리마켓, 체험
+              부스 등 다양한 이벤트가 열려 시민과 관광객 모두가 함께 즐길 수
+              있는 문화 놀이터로 탈바꿈합니다.
+            </div>
+          </div>
+        </div>
+        <div class="tour3">
+          <div class="tour_list_div">
+            <div class="tour_list">충렬사</div>
+          </div>
+          <div class="tour_list_text_div">
+            <div class="tour_list_text">
+              역사의 숨결을 따라 걷다, 부산 충렬사 <br />
+              <br />
+              부산 동래구에 위치한 **부산 충렬사(Busan Chungnyeolsa Shrine)**는
+              조선 시대 임진왜란 당시 나라를 위해 목숨을 바친 동래부사 송상현과
+              수많은 순국선열들의 넋을 기리는 역사 유적지입니다. 화려하진
+              않지만, 조용하고 기품 있는 공간에서 부산의 깊은 역사와 정신을 느낄
+              수 있는 장소입니다. <br />
+              <br />
+              정문과 홍살문 <br />
+              붉은 색의 홍살문을 지나면 소나무 숲길과 함께 조용한 분위기의
+              경내가 펼쳐집니다. 문을 통과하는 순간, 마치 시간여행을 떠나는 듯한
+              느낌을 줍니다. <br />
+              <br />
+              충렬사 본전 (사당) <br />
+              본전에는 송상현 부사와 그의 부하들, 그리고 충신들의 위패가 모셔져
+              있어 제향의 공간으로 사용됩니다. 기와지붕과 전통 건축양식이
+              어우러져 고즈넉한 아름다움을 자아냅니다. <br />
+              <br />
+              순절비와 유허비 <br />
+              곳곳에 세워진 기념비와 비석들은 당시의 역사적 의미를 되새기게
+              합니다. 특히 송상현 부사의 순절비는 그 정신을 기리는 상징적인
+              장소입니다. <br />
+              <br />
+              충렬사 기념관 <br />
+              충렬사 내 전시관에서는 임진왜란 당시의 역사자료, 유물, 조선 군사
+              문서 등을 볼 수 있어 교육적인 가치도 높습니다. 학생이나 역사에
+              관심 있는 이들에게 매우 유익한 공간입니다. <br />
+            </div>
+          </div>
+        </div>
+        <div class="tour">
+          <div class="tour_list_div">
+            <div class="tour_list">정묘</div>
+          </div>
+          <div class="tour_list_text_div">
+            <div class="tour_list_text">
+              충절의 정신을 기리는 공간, 부산 정묘<br />
+              <br />
+              부산 동래구에 자리한 **정묘(旌廟)**는 조선 시대 임진왜란 당시
+              나라를 지키기 위해 순절한 동래부사 송상현과 그를 따랐던 충신들의
+              충절과 희생을 기리는 사당입니다. 조용한 숲길 속에 숨겨진 이곳은
+              부산 시민은 물론 역사에 관심 있는 이들에게 깊은 울림을 주는
+              장소입니다.
+              <br />
+              🏛️ 정묘란?<br />
+              ‘정묘(旌廟)’는 나라에 큰 공을 세우거나 충절을 다한 인물들을 기리기
+              위해 세운 사당입니다. **부산 정묘는 1605년(선조 38년)**에
+              세워졌으며, 지금까지 국가 지정 사적 제7호로 지정되어 보존되고
+              있습니다.<br />
+              <br />
+              전통 사당 건축<br />
+              정묘는 전통적인 기와지붕과 단정한 배치가 돋보이며, 고즈넉한 분위기
+              속에서 선조들의 정신을 되새기기에 좋은 공간입니다. 단순하지만 기품
+              있는 건축미가 인상적입니다.<br />
+              <br />
+              충신들의 위패<br />
+              이곳에는 송상현 부사뿐만 아니라, 함께 순절한 관리들과 의병들의
+              위패도 함께 모셔져 있어, 집단적인 충절의 상징이라 할 수
+              있습니다.<br />
+              <br />
+              조용한 산책로와 주변 숲<br />
+              정묘 주변은 잘 가꿔진 자연 경관과 숲길이 어우러져 있어 사색하며
+              걷기에 좋습니다. 인근에 위치한 부산 충렬사와 함께 둘러보면 역사적
+              의미가 더욱 깊어집니다.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.getElementById("menuToggle");
+        const submenu = document.getElementById("submenu");
 
+        let isOpen = false;
+
+        // 메뉴 아이콘 클릭하면 보이게
+        menuIcon.addEventListener("click", (e) => {
+          e.stopPropagation();
+          submenu.style.display = "flex";
+          isOpen = true;
+        });
+
+        // 바깥 클릭 시 숨기기
+        document.addEventListener("click", (e) => {
+          if (isOpen && !submenu.contains(e.target) && e.target !== menuIcon) {
+            submenu.style.display = "none";
+            isOpen = false;
+          }
+        });
+
+        // 메뉴 내부 클릭 시 닫히지 않도록
+        submenu.addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
+      });
+    </script>
+  </body>
+</html>
