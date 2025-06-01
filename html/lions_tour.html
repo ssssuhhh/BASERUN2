@@ -157,19 +157,9 @@
         position: absolute;
         left: 50%;
         translate: -50%;
-        top: 154px;
+        top: 300px;
       }
-      .title {
-        color: var(--primary-color-1d4d9f, #1d4d9f);
-        text-align: left;
-        font-family: "Inter-Black", sans-serif;
-        font-size: 48px;
-        line-height: 140%;
-        letter-spacing: -0.02em;
-        font-weight: 900;
-        position: relative;
-        align-self: stretch;
-      }
+
       .tour1 {
         display: flex;
         flex-direction: column;
@@ -264,6 +254,90 @@
         flex-shrink: 0;
         position: relative;
       }
+      .lions {
+        display: flex;
+        flex-direction: column;
+        gap: 27px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 803.25px;
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        top: 125px;
+      }
+      .title {
+        color: var(--primary-color-1d4d9f, #1d4d9f);
+        text-align: left;
+        font-family: "Inter-Black", sans-serif;
+        font-size: 48px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 900;
+        position: relative;
+        align-self: stretch;
+      }
+      .food_list {
+        display: flex;
+        flex-direction: row;
+        gap: 67.5px;
+        align-items: center;
+        justify-content: center;
+        align-self: stretch;
+        flex-shrink: 0;
+        height: 34.5px;
+        position: relative;
+      }
+      .checked_div {
+        background: #1d4d9f;
+        border-radius: 15px;
+
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 222.75px;
+        height: 34.5px;
+        position: relative;
+        box-shadow: 1.5px 1.5px 15px 3px rgba(209, 209, 209, 0.25);
+      }
+      .checked {
+        color: #ffffff;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 15px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+      }
+      .unchecked_div {
+        background: #ffffff;
+        border-radius: 15px;
+
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 222.75px;
+        height: 34.5px;
+        position: relative;
+        box-shadow: 1.5px 1.5px 15px 3px rgba(209, 209, 209, 0.25);
+      }
+      .unchecked {
+        color: #1d4d9f;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 15px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+      }
     </style>
   </head>
   <body>
@@ -322,8 +396,27 @@
       </div>
     </div>
     <section>
-      <div class="giants_tour">
+      <div class="lions">
         <div class="title">대구 라이온즈 파크</div>
+        <div class="food_list">
+          <a href="lions_inside.html" style="text-decoration: none">
+            <div class="unchecked_div">
+              <div class="unchecked">라이온즈 파크 내부 먹거리</div>
+            </div>
+          </a>
+          <a href="lions_outside.html" style="text-decoration: none">
+            <div class="unchecked_div">
+              <div class="unchecked">라이온즈 파크 외부 먹거리</div>
+            </div>
+          </a>
+          <div class="checked_div">
+            <div class="checked">라이온즈 파크 근처 관광지</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="giants_tour">
         <div class="tour1">
           <div class="tour_list_div">
             <div class="tour_list">대구수목원</div>
