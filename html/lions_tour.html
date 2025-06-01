@@ -1,20 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/BASERUN2/css/lions_inside.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DAEGU TOUR</title>
+    <style>
+      .div,
+      .div * {
+        box-sizing: border-box;
+      }
+      .div {
+        background: #f8f8f8;
+        height: 1580px;
+        position: relative;
+      }
+      .top {
+        display: flex;
+        flex-direction: row;
+        gap: 441.75px;
+        align-items: center;
+        justify-content: flex-start;
+        width: 957px;
+        height: 117.75px;
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        top: 19.62px;
+      }
+      .baserun {
+        color: #000000;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 41.25px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+        flex: 1;
+      }
+      .menu_list {
+        display: flex;
+        flex-direction: row;
+        gap: 21px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 192.75px;
+        height: 30px;
+        position: relative;
+        overflow: visible;
+        margin-right: 40px;
+      }
+      .footer_div {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+        width: 957px;
+        height: 97px;
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        bottom: 0px;
+      }
+      .footer_line {
+        background: var(--primary-color-1d4d9f, #1d4d9f);
+        flex-shrink: 0;
+        width: 957px;
+        height: 4px;
+        position: relative;
+      }
+      .footer_content {
+        color: #000000;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 13px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+        align-self: stretch;
+      }
+
+      .submenu-div {
+        display: none;
+        background: var(--primary-color-1d4d9f, #1d4d9f);
+        padding: 79px 51px 79px 51px;
+        z-index: 10;
+        flex-direction: column;
+        gap: 0px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 495px;
+        height: 1314px;
+        position: absolute;
+        left: calc(50% - 17px);
+        top: 0px;
+      }
+      .submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 25.5px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .submenu_title {
+        color: #ffffff;
+        text-align: left;
+        font-family: "Inter-ExtraBold", sans-serif;
+        font-size: 39px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        font-weight: 800;
+        position: relative;
+        align-self: stretch;
+      }
+      .submenu-rect {
+        background: #ffffff;
+        flex-shrink: 0;
+        width: 388px;
+        height: 6px;
+        position: relative;
+      }
+      .submenu_text {
+        color: #ffffff;
+        text-align: left;
+        font-family: "Inter-ExtraBold", sans-serif;
+        font-size: 30px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        font-weight: 800;
+        position: relative;
+        align-self: stretch;
+      }
+      .submenu-div .submenu_text-span li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Inter-ExtraBold", sans-serif;
+        font-size: 30px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        font-weight: 800;
+      }
+
+      .giants_tour {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 849px;
+        height: 918px;
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        top: 154px;
+      }
+      .title {
+        color: var(--primary-color-1d4d9f, #1d4d9f);
+        text-align: left;
+        font-family: "Inter-Black", sans-serif;
+        font-size: 48px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 900;
+        position: relative;
+        align-self: stretch;
+      }
+      .tour1 {
+        display: flex;
+        flex-direction: column;
+        gap: 21.31px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-self: stretch;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .tour_list_div {
+        background: #1d4d9f;
+        border-radius: 14.21px;
+        padding: 6.39px 14.92px 6.39px 14.92px;
+        display: flex;
+        flex-direction: row;
+        gap: 5.68px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 144.93px;
+        height: 32.68px;
+        position: relative;
+        box-shadow: 1.42px 1.42px 14.21px 2.84px rgba(209, 209, 209, 0.25);
+      }
+      .tour_list {
+        color: #ffffff;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 20.866107940673828px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+      }
+
+      .tour_list_text_div {
+        background: #ffffff;
+        border-radius: 14.21px;
+        padding: 11px 46px 42px 46px;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        align-items: flex-start;
+        justify-content: center;
+        align-self: stretch;
+        flex-shrink: 0;
+        height: 119px;
+        position: relative;
+        box-shadow: 2.84px 2.84px 14.21px 0px rgba(248, 248, 248, 0.25);
+        overflow-y: auto;
+      }
+
+      .tour_list_text {
+        color: #000000;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 18.866107940673828px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+        width: 757px;
+      }
+      .tour2 {
+        display: flex;
+        flex-direction: column;
+        gap: 21.31px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-self: stretch;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .tour3 {
+        display: flex;
+        flex-direction: column;
+        gap: 21.31px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-self: stretch;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .tour {
+        display: flex;
+        flex-direction: column;
+        gap: 21.31px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-self: stretch;
+        flex-shrink: 0;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
     <div class="div">
       <header>
         <div class="top">
           <div class="baserun">BASERUN</div>
           <div class="menu_list">
-            <a href="/BASERUN2/html/mainpage.html"><img src="/BASERUN2/asset/menu1.svg" /></a>
-            <img src="/BASERUN2/asset/menu2.svg" />
-            <img class="submenu3" src="/BASERUN2/asset/menu3.svg" />
+            <a href="mainpage.html"><img src="/BASERUN2/asset/menu1.svg" /></a>
+            <a href="userPage.html"><img src="/BASERUN2/asset/menu2.svg" /></a>
+            <img
+              id="menuToggle"
+              class="submenu3"
+              src="/BASERUN2/asset/menu3.svg"
+              style="cursor: pointer"
+            />
           </div>
         </div>
       </header>
@@ -30,88 +295,153 @@
           </div>
         </div>
       </footer>
-     <section>
-         <div class="lions">
-            <div class="title">대구 라이온즈 파크</div>
-            <div class="food_list">
-                <div class="checked_div">
-                    <div class="checked">라이온즈 파크 내부 먹거리</div>
-                </div>
-                <a href="/BASERUN2/html/lions_outside.html" style="text-decoration: none;">
-                    <div class="unchecked_div">
-                    <div class="unchecked">라이온즈 파크 외부 먹거리</div>
-                    </div>
-                </a>
-                <div class="unchecked_div ">
-                    <div class="unchecked">라이온즈 파크 근처 관광지</div>
-                </div>
+      <div>
+        <div class="submenu-div" id="submenu">
+          <div class="submenu">
+            <div class="submenu_title">세부 메뉴</div>
+            <div class="submenu-rect"></div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li><a href="necessary1.html"> 준비물 추천 </a></li>
+              </ul>
             </div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li>
+                  <a href="/BASERUN2/html/ranking.html">정규 리그 순위</a>
+                </li>
+              </ul>
+            </div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li><a href="/BASERUN2/html/rule.html">야구 기본 규칙</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </section>
-      <section>
-        <img class="img" src="/BASERUN2/asset/ss_inside_img.png" />
-        <div class="where">
-            <div class="title2">자리가 어디신가요?</div>
-            <div class="floor_list">
-                <div class="floor1">
-                    <div class="_1">1층</div>
-                </div>
-                <div class="floor2">
-                    <div class="_2">2층</div>
-                </div>
-                <div class="floor3">
-                    <div class="_3">3층</div>
-                </div>
-                <div class="floor4">
-                    <div class="_4">4층</div>
-                </div>
-                <div class="floor5">
-                    <div class="_5">5층</div>
-                </div>
-            </div>
-            <div class="inside_content">
-                <div class="content_change">
-                    층을 선택해주세요!
-                </div>
+      </div>
     </div>
-       
-       </section>
-    <div>
-
+    <section>
+      <div class="giants_tour">
+        <div class="title">대구 라이온즈 파크</div>
+        <div class="tour1">
+          <div class="tour_list_div">
+            <div class="tour_list">대구수목원</div>
+          </div>
+          <div class="tour_list_text_div">
+            <div class="tour_list_text">
+              대구수목원 (Daegu Arboretum)<br />
+              <br />
+              삼성 라이온즈 파크에서 차로 약 10분 거리<br />
+              <br />
+              옛 쓰레기 매립지를 자연공원으로 탈바꿈시킨 성공적인 사례로, 지금은
+              대구 시민들의 대표적인 힐링 공간입니다. 사계절 다양한 식물과
+              산책로가 아름답게 조성되어 있어, 경기 전후 산책이나 피크닉 장소로
+              제격입니다.<br />
+              <br />
+              볼거리: 선인장 온실, 분재원, 연못, 계절별 꽃정원<br />
+              <br />
+              특징: 가족 단위 방문객, 커플 산책 장소로 인기<br />
+              <br />
+              추천 포인트: 봄 벚꽃, 가을 단풍 명소<br />
+            </div>
+          </div>
+        </div>
+        <div class="tour2">
+          <div class="tour_list_div">
+            <div class="tour_list">이월드 & 83타워</div>
+          </div>
+          <div class="tour_list_text_div">
+            <div class="tour_list_text">
+              이월드 & 83타워 (E-World & 83 Tower)<br />
+              <br />
+              차로 약 10분, 두류공원 인근<br />
+              <br />
+              대구의 대표 테마파크로, 놀이기구, 야경, 데이트코스 모두 만족하는
+              종합 놀이터입니다. 83타워 전망대에서는 대구 시내를 한눈에 내려다볼
+              수 있고, 야경 명소로도 유명합니다.<br />
+              <br />
+              볼거리: 롤러코스터, 회전목마, 야경 전망대<br />
+              <br />
+              특징: 연인들에게 인기 있는 데이트 스폿<br />
+              <br />
+              추천 포인트: 야간 개장 시 조명과 함께 더 낭만적인 분위기<br />
+            </div>
+          </div>
+        </div>
+        <div class="tour3">
+          <div class="tour_list_div">
+            <div class="tour_list">대구미술관</div>
+          </div>
+          <div class="tour_list_text_div">
+            <div class="tour_list_text">
+              대구미술관 (Daegu Art Museum)<br />
+              <br />
+              차로 약 10~15분 거리<br />
+              <br />
+              현대적인 외관과 함께 수준 높은 전시가 자주 열리는 대구의 대표 미술
+              전시 공간입니다. 국내외 유명 작가들의 작품부터 대구 지역 예술가
+              전시까지 다양하게 감상할 수 있습니다.<br />
+              <br />
+              볼거리: 기획 전시, 대형 설치미술, 야외 조각공원<br />
+              <br />
+              특징: 감성 충전, 조용하고 쾌적한 실내 관람<br />
+              <br />
+              추천 포인트: 예술과 함께하는 여유로운 오전 일정에 적합
+            </div>
+          </div>
+        </div>
+        <div class="tour">
+          <div class="tour_list_div">
+            <div class="tour_list">앞산공원</div>
+          </div>
+          <div class="tour_list_text_div">
+            <div class="tour_list_text">
+              앞산 카페거리 & 앞산공원 (Apsan Café Street & Park)<br />
+              <br />
+              차로 약 20분 거리<br />
+              <br />
+              경기 후 여유로운 저녁을 보내고 싶다면 앞산 카페거리와 앞산공원
+              조합을 추천합니다. 감각적인 카페들이 줄지어 있고, 조금만 올라가면
+              앞산 전망대에서 대구 도심 야경도 감상할 수 있습니다.<br />
+              <br />
+              볼거리: 대구 시내 전경, 전망대, 루프탑 카페<br />
+              <br />
+              특징: 트렌디한 분위기 + 자연의 조화<br />
+              <br />
+              추천 포인트: 야구 경기 후 밤 산책 및 디저트 코스로 제격
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <script>
-      // 각 버튼별 내용 매핑
-      const contentMap = {
-       floor1: `1F . 외부 매장 : CU, 버터우드, 알통떡강정, 스트릿츄러스, &지코바`,
-        floor2: `2F . 외부 매장 : WOKSTER, 맘스터치, 버터우드X상하목장, 브뤼셀프라이<br>
-        2F . 외야석 : 몽블랑더파리, 해피크레페, 맥주부스<br>
-        2F . 푸드스트리트 : CU, 파파존스 피자, 리얼키친더홍, 북촌손만두, 해피치즈스마일<br>`,
-        floor3: `3F . 내야석, 잔디석하단 : 노랑통닭, 리얼피그, 블루도그, 만재네, 전설스낵, 북촌손만두, 전설꼬치, 알통떡강정, 5직떡볶이, 해피치즈스마일, 리얼누들, 버터우드, 맥주부스
-`,
-        floor4: `4F . 스윗박스 : 파티플로어, 맥주부스`,
-        floor5: `5F . 스카이 지정석 : CU, 장여사 나뭇잎 손만두, 빙수집,지코바, STATION & 해피치즈스마일, 요아정, 스트릿츄러스, 지코바, 맥주부스`
-      };
+      window.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.getElementById("menuToggle");
+        const submenu = document.getElementById("submenu");
 
-      // 버튼들 선택
-      const buttons = document.querySelectorAll(".floor_list > div");
-      const contentDiv = document.querySelector(".content_change");
+        let isOpen = false;
 
-      buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-          // 모든 버튼에서 active 제거
-          buttons.forEach((btn) => btn.classList.remove("active"));
+        // 메뉴 아이콘 클릭하면 보이게
+        menuIcon.addEventListener("click", (e) => {
+          e.stopPropagation();
+          submenu.style.display = "flex";
+          isOpen = true;
+        });
 
-          // 클릭한 버튼에 active 추가
-          button.classList.add("active");
+        // 바깥 클릭 시 숨기기
+        document.addEventListener("click", (e) => {
+          if (isOpen && !submenu.contains(e.target) && e.target !== menuIcon) {
+            submenu.style.display = "none";
+            isOpen = false;
+          }
+        });
 
-          // 내용 변경
-          const key = button.classList[0];
-          contentDiv.innerHTML = contentMap[key] || "내용이 없습니다.";
+        // 메뉴 내부 클릭 시 닫히지 않도록
+        submenu.addEventListener("click", (e) => {
+          e.stopPropagation();
         });
       });
     </script>
-      
-    
-
-
-</body>
+  </body>
 </html>
