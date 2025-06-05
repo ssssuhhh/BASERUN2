@@ -56,11 +56,9 @@
         </div>
       </div>
     <div>
-    <h2>안녕하세요, 베런님! 👋</h2>
-    <div id="logo">
-      <img src="/BASERUN2/asset/LotteGiants_logo.svg" />
-    </div>
-    <p id="choice">선택 구단: 롯데 자이언츠</p>
+    <h2 id="hello"></h2>
+    <div id="logo"></div>
+    <p id="choice">선택된 구단이 없습니다.</p>
     <nav class="bottom">
       <a href="userInformation.html" class="nav-button" id="information"
         >회원 정보</a
@@ -77,6 +75,81 @@
       </p>
     </footer>
     <script>
+      function getCookie(name) {
+        const cookies = document.cookie.split("; ");
+        for (const row of cookies) {
+          const [key, value] = row.split("=");
+          if (key == name) return decodeURIComponent(value);
+        }
+        return null;
+      }
+      function setCookie(name, value, expireDate) {
+        const date = new Date();
+        date.setTime(date.getTime() + expireDate * 24 * 60 * 60 * 1000);
+        document.cookie =
+          name +
+          "=" +
+          encodeURIComponent(value) +
+          "; expires=" +
+          date.toUTCString() +
+          "; path=/";
+      }
+      window.onload = function () {
+        const username = getCookie("username");
+        const team = getCookie("team");
+
+        if (!username) {
+          alert("회원가입 정보가 없습니다.");
+          window.location.href = "signup.html";
+          return false;
+        }
+        document.getElementById("hello").innerText =
+          "안녕하세요, " + username + "님! 👋";
+
+        const nameMap = {
+          lotte: "롯데 자이언츠",
+          samsung: "삼성 라이온즈",
+          doosan: "두산 베어스",
+          kt: "KT 위즈",
+          kiwoon: "키움 히어로즈",
+          hanhwa: "한화 이글스",
+          lg: "엘지 트윈스",
+          nc: "NC 다이노스",
+          ssg: "SSG 랜더스",
+          kia: "기아 타이거즈",
+        };
+
+        const logoMap = {
+          lotte: "BASERUN2/asset/giants.svg",
+          doosan: "BASERUN2/asset/doosan.svg",
+          hanhwa: "BASERUN2/asset/eagles.svg",
+          kia: "BASERUN2/asset/kia.svg",
+          kiwoon: "BASERUN2/asset/kiwoom.svg",
+          kt: "BASERUN2/asset/kt.svg",
+          lg: "BASERUN2/asset/LG.svg",
+          nc: "BASERUN2/asset/NC.svg",
+          samsung: "BASERUN2/asset/samsung.svg",
+          ssg: "BASERUN2/asset/ssg.svg",
+        };
+
+        if (team && nameMap[team] && logoMap[team]) {
+          setCookie("team", team, 365);
+          document.getElementById("choice").innerText =
+            "선택구단: " + nameMap[team];
+          const imgContainer = document.getElementById("logo");
+          let logoImg = document.getElementById("team-logo");
+
+          // 없으면 새로 생성
+          if (!logoImg) {
+            logoImg = document.createElement("img");
+            logoImg.id = "team-logo";
+            imgContainer.appendChild(logoImg);
+          }
+          logoImg.src = logoMap[team];
+          logoImg.alt = nameMap[team];
+          document.getElementById("team-select").value = "";
+        }
+      };
       window.addEventListener("DOMContentLoaded", () => {
         const menuIcon = document.getElementById("menuToggle");
         const submenu = document.getElementById("submenu");
