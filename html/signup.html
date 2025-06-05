@@ -14,9 +14,10 @@
       <section class="signup_section">
         <span>이름</span><br />
         <input
+          id="username"
           name="first_name"
           type="text"
-          placeholder="닉네임을 입력해주세요"
+          placeholder="이름을 입력해주세요"
           required
         />
       </section>
@@ -62,9 +63,25 @@
       </p>
     </footer>
     <script>
+      function setCookie(name, value, expireDate) {
+        const date = new Date();
+        date.setTime(date.getTime() + expireDate * 24 * 60 * 60 * 1000);
+        document.cookie =
+          name +
+          "=" +
+          encodeURIComponent(value) +
+          "; expires=" +
+          date.toUTCString() +
+          "; path=/";
+      }
       function checkPassword() {
         const pw1 = document.getElementById("password1").value;
         const pw2 = document.getElementById("password2").value;
+        const username = document.forms["signup"]["first_name"].value;
+
+        setCookie("username", username, 365);
+
+        alert("회원가입 완료!");
 
         if (pw1 !== pw2) {
           alert("비밀번호가 다릅니다!");

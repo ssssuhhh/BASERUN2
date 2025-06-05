@@ -58,11 +58,11 @@
         >
           회원 정보
         </button>
-        <button type="button" class="button">개인 정보 수정</button>
+         <button type="button" class="button" id="edit">개인 정보 수정</button>
       </div>
-      <p class="information">이름: 베런</p>
-      <p class="information">이메일: ABC@gmail.com</p>
-      <p class="information">전화번호: 010-1234-5678</p>
+      <p class="information" id="username"></p>
+      <p class="information" id="email">이메일을 입력해주세요</p>
+      <p class="information" id="phone">전화번호를 입력해주세요</p>
       <p class="information" id="choice">선택된 구단이 없습니다.</p>
       <div id="group">
         <div id="img"></div>
@@ -95,6 +95,101 @@
       </p>
     </footer>
     <script>
+      function getCookie(name) {
+        const cookies = document.cookie.split("; ");
+        for (const row of cookies) {
+          const [key, value] = row.split("=");
+          if (key == name) return decodeURIComponent(value);
+        }
+        return null;
+      }
+      function setCookie(name, value, expireDate) {
+        const date = new Date();
+        date.setTime(date.getTime() + expireDate * 24 * 60 * 60 * 1000);
+        document.cookie =
+          name +
+          "=" +
+          encodeURIComponent(value) +
+          "; expires=" +
+          date.toUTCString() +
+          "; path=/";
+      }
+      window.onload = function () {
+        const username = getCookie("username");
+        const email = getCookie("email");
+        const phone = getCookie("phone");
+        const team = getCookie("team");
+
+        const usernameElement = document.getElementById("username");
+        if (!username) {
+          alert("회원가입 정보가 없습니다.");
+          window.location.href = "signup.html";
+          return false;
+        }
+        document.getElementById("username").innerText = "이름: " + username;
+
+        const emailElement = document.getElementById("email");
+        if (!email) {
+          const inputEmail = prompt(
+            "이메일을 입력해주세요 (예: example@gmail.com)"
+          );
+          if (inputEmail) {
+            setCookie("email", inputEmail, 365);
+            emailElement.innerText = "이메일: " + inputEmail;
+          } else {
+            emailElement.innerText = "이메일을 입력하지 않으셨습니다";
+          }
+        } else {
+          emailElement.innerText = "이메일: " + email;
+        }
+
+        const phoneElement = document.getElementById("phone");
+        if (phone === null) {
+          const inputPhone = prompt(
+            "전화번호를 입력해주세요 (예: 010-1234-5678)"
+          );
+          if (inputPhone) {
+            setCookie("phone", inputPhone, 365);
+            phoneElement.innerText = "전화번호: " + inputPhone;
+          } else {
+            phoneElement.innerText = "전화번호를 입력하지 않으셨습니다";
+          }
+        } else {
+          phoneElement.innerText = "전화번호: " + phone;
+        }
+
+        if (team) {
+          changeTeam(team);
+        }
+        const editBtn = document.getElementById("edit");
+        editBtn.addEventListener("click", function () {
+          const inputUsername = prompt("이름을 입력해주세요");
+          if (inputUsername) {
+            setCookie("username", inputUsername, 365);
+            usernameElement.innerText = "이름: " + inputUsername;
+          } else {
+            usernameElement.innerText = "이름을 입력하지 않으셨습니다.";
+          }
+          const inputEmail = prompt(
+            "이메일을 입력해주세요 (예: example@gmail.com)"
+          );
+          if (inputEmail) {
+            setCookie("email", inputEmail, 365);
+            emailElement.innerText = "이메일: " + inputEmail;
+          } else {
+            emailElement.innerText = "이메일을 입력하지 않으셨습니다.";
+          }
+          const inputPhone = prompt(
+            "전화번호를 입력해주세요 (예: 010-1234-5678)"
+          );
+          if (inputPhone) {
+            setCookie("phone", inputPhone, 365);
+            phoneElement.innerText = "전화번호: " + inputPhone;
+          } else {
+            phoneElement.innerText = "전화번호를 입력하지 않으셨습니다.";
+          }
+        });
+      };
       function changeTeam(team) {
         const nameMap = {
           lotte: "롯데 자이언츠",
@@ -123,6 +218,7 @@
         };
 
         if (team && nameMap[team] && logoMap[team]) {
+          setCookie("team", team, 365);
           document.getElementById("choice").innerText =
             "선택구단: " + nameMap[team];
           const imgContainer = document.getElementById("img");
