@@ -777,7 +777,8 @@
 .component:hover .JSD,
 .component:hover .div14,
 .component:hover .div15,
-.component:hover .vs {
+.component:hover .vs,
+.component-12 .vs2 {
   color: var(--netural-white, #ffffff);
 }
 
