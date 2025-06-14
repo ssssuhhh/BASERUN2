@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GOCHEOK TOUR</title>
+    <style>
+      .div,
+      .div * {
+        box-sizing: border-box;
+      }
+      .div {
+        background: #f8f8f8;
+        height: 1580px;
+        position: relative;
+      }
+      .top {
+        display: flex;
+        flex-direction: row;
+        gap: 441.75px;
+        align-items: center;
+        justify-content: flex-start;
+        width: 957px;
+        height: 117.75px;
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        top: 19.62px;
+      }
+      .baserun {
+        color: #000000;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 41.25px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+        flex: 1;
+      }
+      .menu_list {
+        display: flex;
+        flex-direction: row;
+        gap: 21px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 192.75px;
+        height: 30px;
+        position: relative;
+        overflow: visible;
+        margin-right: 40px;
+      }
+      .footer_div {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+        width: 957px;
+        height: 97px;
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        bottom: 0px;
+      }
+      .footer_line {
+        background: var(--primary-color-1d4d9f, #1d4d9f);
+        flex-shrink: 0;
+        width: 957px;
+        height: 4px;
+        position: relative;
+      }
+      .footer_content {
+        color: #000000;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 13px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+        align-self: stretch;
+      }
+
+      .submenu-div {
+        display: none;
+        background: var(--primary-color-1d4d9f, #1d4d9f);
+        padding: 79px 51px 79px 51px;
+        z-index: 10;
+        flex-direction: column;
+        gap: 0px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 495px;
+        height: 1314px;
+        position: absolute;
+        left: calc(50% - 17px);
+        top: 0px;
+      }
+      .submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 25.5px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .submenu_title {
+        color: #ffffff;
+        text-align: left;
+        font-family: "Inter-ExtraBold", sans-serif;
+        font-size: 30px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        font-weight: 800;
+        position: relative;
+        align-self: stretch;
+      }
+      .submenu-rect {
+        background: #ffffff;
+        flex-shrink: 0;
+        width: 388px;
+        height: 6px;
+        position: relative;
+      }
+      .submenu_text {
+        color: #ffffff;
+        text-align: left;
+        font-family: "Inter-ExtraBold", sans-serif;
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        font-weight: 800;
+        position: relative;
+        align-self: stretch;
+      }
+      .submenu-div .submenu_text-span li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Inter-ExtraBold", sans-serif;
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        font-weight: 800;
+      }
+
+      .giants_tour {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 849px;
+        height: 918px;
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        top: 300px;
+      }
+
+      .tour1 {
+        display: flex;
+        flex-direction: column;
+        gap: 21.31px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-self: stretch;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .tour_list_div {
+        background: #1d4d9f;
+        border-radius: 14.21px;
+        padding: 6.39px 14.92px 6.39px 14.92px;
+        display: flex;
+        flex-direction: row;
+        gap: 5.68px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 144.93px;
+        height: 32.68px;
+        position: relative;
+        box-shadow: 1.42px 1.42px 14.21px 2.84px rgba(209, 209, 209, 0.25);
+      }
+      .tour_list {
+        color: #ffffff;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 20.866107940673828px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+      }
+
+      .tour_list_text_div {
+        background: #ffffff;
+        border-radius: 14.21px;
+        padding: 11px 46px 42px 46px;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        align-items: flex-start;
+        justify-content: center;
+        align-self: stretch;
+        flex-shrink: 0;
+        height: 119px;
+        position: relative;
+        box-shadow: 2.84px 2.84px 14.21px 0px rgba(248, 248, 248, 0.25);
+        overflow-y: auto;
+      }
+
+      .tour_list_text {
+        color: #000000;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 18.866107940673828px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+        width: 757px;
+      }
+      .tour2 {
+        display: flex;
+        flex-direction: column;
+        gap: 21.31px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-self: stretch;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .tour3 {
+        display: flex;
+        flex-direction: column;
+        gap: 21.31px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-self: stretch;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .tour {
+        display: flex;
+        flex-direction: column;
+        gap: 21.31px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-self: stretch;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .lions {
+        display: flex;
+        flex-direction: column;
+        gap: 27px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 803.25px;
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        top: 125px;
+      }
+      .title {
+        color: var(--primary-color-1d4d9f, #1d4d9f);
+        text-align: left;
+        font-family: "Inter-Black", sans-serif;
+        font-size: 48px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 900;
+        position: relative;
+        align-self: stretch;
+      }
+      .food_list {
+        display: flex;
+        flex-direction: row;
+        gap: 67.5px;
+        align-items: center;
+        justify-content: center;
+        align-self: stretch;
+        flex-shrink: 0;
+        height: 34.5px;
+        position: relative;
+      }
+      .checked_div {
+        background: #1d4d9f;
+        border-radius: 15px;
+
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 222.75px;
+        height: 34.5px;
+        position: relative;
+        box-shadow: 1.5px 1.5px 15px 3px rgba(209, 209, 209, 0.25);
+      }
+      .checked {
+        color: #ffffff;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 15px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+      }
+      .unchecked_div {
+        background: #ffffff;
+        border-radius: 15px;
+
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 222.75px;
+        height: 34.5px;
+        position: relative;
+        box-shadow: 1.5px 1.5px 15px 3px rgba(209, 209, 209, 0.25);
+      }
+      .unchecked {
+        color: #1d4d9f;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 15px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div">
+      <header>
+        <div class="top">
+          <div class="baserun">BASERUN</div>
+          <div class="menu_list">
+            <a href="mainpage.html"><img src="/BASERUN2/asset/menu1.svg" /></a>
+            <a href="userPage.html"><img src="/BASERUN2/asset/menu2.svg" /></a>
+            <img
+              id="menuToggle"
+              class="submenu3"
+              src="/BASERUN2/asset/menu3.svg"
+              style="cursor: pointer"
+            />
+          </div>
+        </div>
+      </header>
+      <footer>
+        <div class="footer_div">
+          <div class="footer_line"></div>
+          <div class="footer_content">
+            문의: help@baserun.com | 070-1234-5678 | 운영시간: 평일 10:00 ~
+            18:00
+            <br />
+            © 2025 BASERUN Inc. All rights reserved. | 대표: 홍길동 |
+            사업자등록번호: 123-45-67890
+          </div>
+        </div>
+      </footer>
+      <div>
+        <div class="submenu-div" id="submenu">
+          <div class="submenu">
+            <div class="submenu_title">세부 메뉴</div>
+            <div class="submenu-rect"></div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li><a href="necessary1.html"> 준비물 추천 </a></li>
+              </ul>
+            </div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li>
+                  <a href="/BASERUN2/html/ranking.html">정규 리그 순위</a>
+                </li>
+              </ul>
+            </div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li><a href="/BASERUN2/html/rule.html">야구 기본 규칙</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section>
+      <div class="lions">
+        <div class="title">고척 스카이돔</div>
+        <div class="food_list">
+          <a href="heros_inside.html" style="text-decoration: none">
+            <div class="unchecked_div">
+              <div class="unchecked">고척 스카이돔 내부 먹거리</div>
+            </div>
+          </a>
+          <a href="heros_outside.html" style="text-decoration: none">
+            <div class="unchecked_div">
+              <div class="unchecked">고척 스카이돔 외부 먹거리</div>
+            </div>
+          </a>
+          <div class="checked_div">
+            <div class="checked">고척 스카이돔 근처 관광지</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="giants_tour">
+        <div class="tour1">
+          <div class="tour_list_div">
+            <div class="tour_list">안양천</div>
+          </div>
+          <div class="tour_list_text_div">
+            <div class="tour_list_text">
+              안양천<br />
+              <br />
+              고척 스카이돔에서 도보로 약 5분 거리<br />
+              <br />
+              서울 남서부를 따라 흐르는 안양천은 고척 스카이돔 바로 옆을
+              지나가는 넓고 평탄한 산책/자전거 코스입니다. 특히 경기 전후로
+              운동하거나, 간단히 산책하기 좋은 장소로 로컬들 사이에서 인기
+              만점!<br />
+              <br />
+              볼거리: 넓게 트인 수변길, 철새 관찰 포인트, 야경 명소<br />
+              <br />
+              특징: 바람 맞으며 걷기 좋음, 자전거 도로 분리, 조깅 코스 존재
+              있음<br />
+              <br />
+              추천 포인트: 낮엔 탁 트인 하늘 + 산책, 밤엔 조용한 도심 속 야경
+              감상<br />
+            </div>
+          </div>
+        </div>
+        <div class="tour2">
+          <div class="tour_list_div">
+            <div class="tour_list">먹자 골목</div>
+          </div>
+          <div class="tour_list_text_div">
+            <div class="tour_list_text">
+              동양공전 먹자골목<br />
+              <br />
+              도보로 약 3분<br />
+              <br />
+              고척 스카이돔에서 신호등만 건너면 바로 도착! 경기 전후 간단한
+              식사부터 회식 분위기의 술자리까지 모두 가능한 로컬 맛집
+              거리입니다. 다양한 메뉴가 모여 있어서 입맛 따라 골라 먹는 재미도
+              있고, 야구 끝나고 시원하게 한 잔 즐기기에도 제격입니다!<br />
+              <br />
+              볼거리: 북적이는 거리 분위기<br />
+              <br />
+              특징: 야구 끝나면 야구 유니폼 입은 팬들로 가득!<br />
+              <br />
+              추천 포인트: 경기 끝나고 간단한 음주, 안주거리 딱!, 팀 응원하며
+              치맥하기 좋은 분위기,<br />
+              도보 2분 거리 = 접근성 최고!<br />
+            </div>
+          </div>
+        </div>
+        <div class="tour3">
+          <div class="tour_list_div">
+            <div class="tour_list">코스트코</div>
+          </div>
+          <div class="tour_list_text_div">
+            <div class="tour_list_text">
+              코스트코 고척점 및 고척 아이파크몰<br />
+              <br />
+              고척 스카이돔에서 도보 약 10분 거리<br />
+              <br />
+              대형 창고형 매장에서 쇼핑의 재미를 느낄 수 있는 곳! 식료품, 간식,
+              가전제품, 옷까지 없는 게 없고, 야구 경기 전에 핫도그나 피자 한
+              조각으로 간단한 한 끼 해결도 가능합니다.<br />
+              <br />
+              볼거리: 대형 매장 내부, 푸드코트, 전시용 가전·가구들<br />
+              <br />
+              특징: 실내, 시식 가능, 넓은 주차장<br />
+              <br />
+              추천 포인트: 아이파크몰과 함께 있어 경기 전 쉬어가기 딱 좋아요!
+            </div>
+          </div>
+        </div>
+        <div class="tour">
+          <div class="tour_list_div">
+            <div class="tour_list">디큐브시티</div>
+          </div>
+          <div class="tour_list_text_div">
+            <div class="tour_list_text">
+              신도림 현대백화점 디큐브시티<br />
+              <br />
+              버스로 약 10-15분 거리<br />
+              <br />
+              쇼핑, 맛집, 카페, 영화관까지 한 번에 해결되는 복합문화공간입니다.
+              실내여서 비오는 날에도 굿!<br />
+              <br />
+              볼거리: 브랜드 매장, 서점<br />
+              <br />
+              특징: 지하철 연계 / 실내 데이트 장소로 인기 / 테크노마트와도
+              가까움<br />
+              <br />
+              추천 포인트: 야구 보기 전 쇼핑 혹은 영화 한편!<br />
+              <br />
+              ※ 단, 경기 시작 시간이 가까워질수록 버스나 지하철이 붐빌 수
+              있으니<br />
+              조금 일찍 경기장으로 출발하는 걸 추천드려요!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.getElementById("menuToggle");
+        const submenu = document.getElementById("submenu");
+
+        let isOpen = false;
+
+        // 메뉴 아이콘 클릭하면 보이게
+        menuIcon.addEventListener("click", (e) => {
+          e.stopPropagation();
+          submenu.style.display = "flex";
+          isOpen = true;
+        });
+
+        // 바깥 클릭 시 숨기기
+        document.addEventListener("click", (e) => {
+          if (isOpen && !submenu.contains(e.target) && e.target !== menuIcon) {
+            submenu.style.display = "none";
+            isOpen = false;
+          }
+        });
+
+        // 메뉴 내부 클릭 시 닫히지 않도록
+        submenu.addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
+      });
+    </script>
+  </body>
+</html>

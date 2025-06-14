@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAMSIL TOUR</title>
+    <style>
+      .div,
+      .div * {
+        box-sizing: border-box;
+      }
+      .div {
+        background: #f8f8f8;
+        height: 1580px;
+        position: relative;
+      }
+      .top {
+        display: flex;
+        flex-direction: row;
+        gap: 441.75px;
+        align-items: center;
+        justify-content: flex-start;
+        width: 957px;
+        height: 117.75px;
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        top: 19.62px;
+      }
+      .baserun {
+        color: #000000;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 41.25px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+        flex: 1;
+      }
+      .menu_list {
+        display: flex;
+        flex-direction: row;
+        gap: 21px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 192.75px;
+        height: 30px;
+        position: relative;
+        overflow: visible;
+        margin-right: 40px;
+      }
+      .footer_div {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+        width: 957px;
+        height: 97px;
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        bottom: 0px;
+      }
+      .footer_line {
+        background: var(--primary-color-1d4d9f, #1d4d9f);
+        flex-shrink: 0;
+        width: 957px;
+        height: 4px;
+        position: relative;
+      }
+      .footer_content {
+        color: #000000;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 13px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+        align-self: stretch;
+      }
+
+      .submenu-div {
+        display: none;
+        background: var(--primary-color-1d4d9f, #1d4d9f);
+        padding: 79px 51px 79px 51px;
+        z-index: 10;
+        flex-direction: column;
+        gap: 0px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 495px;
+        height: 1314px;
+        position: absolute;
+        left: calc(50% - 17px);
+        top: 0px;
+      }
+      .submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 25.5px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .submenu_title {
+        color: #ffffff;
+        text-align: left;
+        font-family: "Inter-ExtraBold", sans-serif;
+        font-size: 30px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        font-weight: 800;
+        position: relative;
+        align-self: stretch;
+      }
+      .submenu-rect {
+        background: #ffffff;
+        flex-shrink: 0;
+        width: 388px;
+        height: 6px;
+        position: relative;
+      }
+      .submenu_text {
+        color: #ffffff;
+        text-align: left;
+        font-family: "Inter-ExtraBold", sans-serif;
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        font-weight: 800;
+        position: relative;
+        align-self: stretch;
+      }
+      .submenu-div .submenu_text-span li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Inter-ExtraBold", sans-serif;
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        font-weight: 800;
+      }
+
+      .giants_tour {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 849px;
+        height: 918px;
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        top: 300px;
+      }
+
+      .tour1 {
+        display: flex;
+        flex-direction: column;
+        gap: 21.31px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-self: stretch;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .tour_list_div {
+        background: #1d4d9f;
+        border-radius: 14.21px;
+        padding: 6.39px 14.92px 6.39px 14.92px;
+        display: flex;
+        flex-direction: row;
+        gap: 5.68px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 144.93px;
+        height: 32.68px;
+        position: relative;
+        box-shadow: 1.42px 1.42px 14.21px 2.84px rgba(209, 209, 209, 0.25);
+      }
+      .tour_list {
+        color: #ffffff;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 20.866107940673828px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+      }
+
+      .tour_list_text_div {
+        background: #ffffff;
+        border-radius: 14.21px;
+        padding: 11px 46px 42px 46px;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        align-items: flex-start;
+        justify-content: center;
+        align-self: stretch;
+        flex-shrink: 0;
+        height: 119px;
+        position: relative;
+        box-shadow: 2.84px 2.84px 14.21px 0px rgba(248, 248, 248, 0.25);
+        overflow-y: auto;
+      }
+
+      .tour_list_text {
+        color: #000000;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 18.866107940673828px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+        width: 757px;
+      }
+      .tour2 {
+        display: flex;
+        flex-direction: column;
+        gap: 21.31px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-self: stretch;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .tour3 {
+        display: flex;
+        flex-direction: column;
+        gap: 21.31px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-self: stretch;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .tour {
+        display: flex;
+        flex-direction: column;
+        gap: 21.31px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-self: stretch;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .lions {
+        display: flex;
+        flex-direction: column;
+        gap: 27px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 803.25px;
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        top: 125px;
+      }
+      .title {
+        color: var(--primary-color-1d4d9f, #1d4d9f);
+        text-align: left;
+        font-family: "Inter-Black", sans-serif;
+        font-size: 48px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 900;
+        position: relative;
+        align-self: stretch;
+      }
+      .food_list {
+        display: flex;
+        flex-direction: row;
+        gap: 67.5px;
+        align-items: center;
+        justify-content: center;
+        align-self: stretch;
+        flex-shrink: 0;
+        height: 34.5px;
+        position: relative;
+      }
+      .checked_div {
+        background: #1d4d9f;
+        border-radius: 15px;
+
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 222.75px;
+        height: 34.5px;
+        position: relative;
+        box-shadow: 1.5px 1.5px 15px 3px rgba(209, 209, 209, 0.25);
+      }
+      .checked {
+        color: #ffffff;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 15px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+      }
+      .unchecked_div {
+        background: #ffffff;
+        border-radius: 15px;
+
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 222.75px;
+        height: 34.5px;
+        position: relative;
+        box-shadow: 1.5px 1.5px 15px 3px rgba(209, 209, 209, 0.25);
+      }
+      .unchecked {
+        color: #1d4d9f;
+        text-align: center;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 15px;
+        line-height: 140%;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div">
+      <header>
+        <div class="top">
+          <div class="baserun">BASERUN</div>
+          <div class="menu_list">
+            <a href="mainpage.html"><img src="/BASERUN2/asset/menu1.svg" /></a>
+            <a href="userPage.html"><img src="/BASERUN2/asset/menu2.svg" /></a>
+            <img
+              id="menuToggle"
+              class="submenu3"
+              src="/BASERUN2/asset/menu3.svg"
+              style="cursor: pointer"
+            />
+          </div>
+        </div>
+      </header>
+      <footer>
+        <div class="footer_div">
+          <div class="footer_line"></div>
+          <div class="footer_content">
+            문의: help@baserun.com | 070-1234-5678 | 운영시간: 평일 10:00 ~
+            18:00
+            <br />
+            © 2025 BASERUN Inc. All rights reserved. | 대표: 홍길동 |
+            사업자등록번호: 123-45-67890
+          </div>
+        </div>
+      </footer>
+      <div>
+        <div class="submenu-div" id="submenu">
+          <div class="submenu">
+            <div class="submenu_title">세부 메뉴</div>
+            <div class="submenu-rect"></div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li><a href="necessary1.html"> 준비물 추천 </a></li>
+              </ul>
+            </div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li>
+                  <a href="/BASERUN2/html/ranking.html">정규 리그 순위</a>
+                </li>
+              </ul>
+            </div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li><a href="/BASERUN2/html/rule.html">야구 기본 규칙</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section>
+      <div class="lions">
+        <div class="title">잠실 야구장</div>
+        <div class="food_list">
+          <a href="twins_inside.html" style="text-decoration: none">
+            <div class="unchecked_div">
+              <div class="unchecked">잠실 야구장 내부 먹거리</div>
+            </div>
+          </a>
+          <a href="twins_outside.html" style="text-decoration: none">
+            <div class="unchecked_div">
+              <div class="unchecked">잠실 야구장 외부 먹거리</div>
+            </div>
+          </a>
+          <div class="checked_div">
+            <div class="checked">잠실 야구장 근처 관광지</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="giants_tour">
+        <div class="tour1">
+          <div class="tour_list_div">
+            <div class="tour_list">롯데월드</div>
+          </div>
+          <div class="tour_list_text_div">
+            <div class="tour_list_text">
+              롯데월드 어드벤처<br />
+              <br />
+              잠실 야구장에서 버스로 약 20분 거리<br />
+              <br />
+              서울을 대표하는 실내외 복합 테마파크로,
+              어트랙션·퍼레이드·공연·먹거리까지 모두 즐길 수 있는 엔터테인먼트
+              명소입니다. 날씨에 관계없이 놀 수 있어 특히 가족 단위, 커플,
+              친구끼리 방문하기 좋습니다.<br />
+              <br />
+              추천 어트랙션: 회전목마, 아틀란티스, 혜성특급, 자이로스윙<br />
+              <br />
+              특징: 실내외 놀이공원/ 4계절 방문 가능/ 10대부터 30대까지 인기
+              데이트 코스<br />
+              <br />
+              추천 포인트: 어트랙션 -> 맛집 -> 야경 코스 완벽 루트<br />
+            </div>
+          </div>
+        </div>
+        <div class="tour2">
+          <div class="tour_list_div">
+            <div class="tour_list">석촌호수</div>
+          </div>
+          <div class="tour_list_text_div">
+            <div class="tour_list_text">
+              석촌호수 둘레길<br />
+              <br />
+              버스로 약 24분<br />
+              <br />
+              도심 속에서 한적한 자연을 느낄 수 있는 산책 코스로, 벚꽃 명소로도
+              유명합니다. 강바람 맞으며 호수 주변을 산책하거나 피크닉을 즐기기
+              좋습니다.<br />
+              <br />
+              볼거리: 벚꽃길, 조형물, 수변 산책로<br />
+              <br />
+              특징: 낮에도 밤에도 산책 명소<br />
+              <br />
+              추천 포인트: 봄에는 벚꽃, 가을엔 선선하게 야경 감상<br />
+            </div>
+          </div>
+        </div>
+        <div class="tour3">
+          <div class="tour_list_div">
+            <div class="tour_list">롯데월드타워</div>
+          </div>
+          <div class="tour_list_text_div">
+            <div class="tour_list_text">
+              롯데월드타워 & 서울스카이<br />
+              <br />
+              지하철로 약 20분 거리<br />
+              <br />
+              국내 최고층 빌딩(123층)으로, 서울 야경을 한눈에 볼 수 있는 전망대
+              ‘서울스카이’와 고급 쇼핑몰, 시네마, 아쿠아리움까지 갖춘 복합
+              문화공간입니다.<br />
+              <br />
+              볼거리: 서울스카이 전망대, 롯데시네마, 아쿠아리움, 백화점<br />
+              <br />
+              특징: 실내 데이트·쇼핑·맛집 다 있음<br />
+              <br />
+              추천 포인트: 경기 전후 시원한 실내에서 데이트하기 딱!
+            </div>
+          </div>
+        </div>
+        <div class="tour">
+          <div class="tour_list_div">
+            <div class="tour_list">먹자골목</div>
+          </div>
+          <div class="tour_list_text_div">
+            <div class="tour_list_text">
+              방이동 먹자골목<br />
+              <br />
+              버스로 약 25-30분 거리<br />
+              <br />
+              돼지갈비, 찜닭, 감자탕, 떡볶이까지! 서울에서도 손꼽히는 먹거리
+              밀집 구역으로, LG 트윈스 팬들이 경기 전후로 자주 가는
+              핫플입니다.<br />
+              <br />
+              볼거리: 골목 감성 및 맛집 탐방<br />
+              <br />
+              특징: 로컬 느낌 / 늦은 밤까지 운영 / 포장도 가능<br />
+              <br />
+              추천 포인트: 야구 끝나고 치맥 대신 돼갈이나 찜닭? 최고!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.getElementById("menuToggle");
+        const submenu = document.getElementById("submenu");
+
+        let isOpen = false;
+
+        // 메뉴 아이콘 클릭하면 보이게
+        menuIcon.addEventListener("click", (e) => {
+          e.stopPropagation();
+          submenu.style.display = "flex";
+          isOpen = true;
+        });
+
+        // 바깥 클릭 시 숨기기
+        document.addEventListener("click", (e) => {
+          if (isOpen && !submenu.contains(e.target) && e.target !== menuIcon) {
+            submenu.style.display = "none";
+            isOpen = false;
+          }
+        });
+
+        // 메뉴 내부 클릭 시 닫히지 않도록
+        submenu.addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
+      });
+    </script>
+  </body>
+</html>
