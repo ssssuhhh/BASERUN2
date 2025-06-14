@@ -776,7 +776,8 @@
 .component:hover .DJ,
 .component:hover .JSD,
 .component:hover .div14,
-.component:hover .div15 {
+.component:hover .div15,
+.component:hover .vs {
   color: var(--netural-white, #ffffff);
 }
 
@@ -796,7 +797,8 @@
   background: #ffffff;
 }
 .component-12 .today-match2,
-.component-12 .div14 {
+.component-12 .div14,
+.component:hover .vs2 {
   color: #000000;
 }
 
