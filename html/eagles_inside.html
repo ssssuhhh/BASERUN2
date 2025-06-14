@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>볼 파크 내부 먹거리</title>
+    <link rel="stylesheet" href="/BASERUN2/css/eagles_inside.css" />
+</head>
+<body>
+    <div class="div">
+      <header>
+        <div class="top">
+          <div class="baserun">BASERUN</div>
+          <div class="menu_list">
+            <a href="mainpage.html"><img src="/BASERUN2/asset/menu1.svg" /></a>
+            <a href="userPage.html"><img src="/BASERUN2/asset/menu2.svg" /></a>
+            <img
+              id="menuToggle"
+              class="submenu3"
+              src="/BASERUN2/asset/menu3.svg"
+              style="cursor: pointer"
+            />
+          </div>
+        </div>
+      </header>
+      <footer>
+        <div class="footer_div">
+          <div class="footer_line"></div>
+          <div class="footer_content">
+            문의: help@baserun.com | 070-1234-5678 | 운영시간: 평일 10:00 ~
+            18:00
+            <br />
+            © 2025 BASERUN Inc. All rights reserved. | 대표: 홍길동 |
+            사업자등록번호: 123-45-67890
+          </div>
+        </div>
+      </footer>
+      <div>
+        <div class="submenu-div" id="submenu">
+          <div class="submenu">
+            <div class="submenu_title">세부 메뉴</div>
+            <div class="submenu-rect"></div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li><a href="necessary1.html"> 준비물 추천 </a></li>
+              </ul>
+            </div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li>
+                  <a href="/BASERUN2/html/ranking.html">정규 리그 순위</a>
+                </li>
+              </ul>
+            </div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li><a href="/BASERUN2/html/rule.html">야구 기본 규칙</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div>
+     <section>
+         <div class="lions">
+            <div class="title">대전한화생명볼파크</div>
+            <div class="food_list">
+                <div class="checked_div">
+                    <div class="checked">볼 파크 내부 먹거리</div>
+                </div>
+                <a href="eagles_outside.html" style="text-decoration: none;">
+                    <div class="unchecked_div">
+                    <div class="unchecked">볼 파크 외부 먹거리</div>
+                    </div>
+                </a>
+                <a href="eagles_tour.html" style="text-decoration: none;" >
+                <div class="unchecked_div ">
+                    <div class="unchecked">볼 파크 근처 관광지</div>
+                </div></a>
+            </div>
+        </div>
+      </section>
+      <section>
+        <img class="img" src="/BASERUN2/asset/eagles_inside_image.png" />
+        <div class="where">
+            <div class="title2">자리가 어디신가요?</div>
+            <div class="floor_list">
+                <div class="floor1">
+                    <div class="_1">1층</div>
+                </div>
+                <div class="floor2">
+                    <div class="_2">2층</div>
+                </div>
+                <div class="floor3">
+                    <div class="_3">3층</div>
+                </div>
+                <div class="floor4">
+                    <div class="_4">4층</div>
+                </div>
+                
+            </div>
+            <div class="inside_content">
+                <div class="content_change">
+                    층을 선택해주세요!
+                </div>
+    </div>
+       
+       </section>
+    <div>
+
+    <script>
+      // 각 버튼별 내용 매핑
+      const contentMap = {
+       floor1: `3루 : 마성떡볶이, 구르닭, 요아정, 브뤼셀프라이, 빽다방 빵연구소, 농심가락, GS25, 원정상품샵<br>
+                중앙 : 자담치킨, BBQ치킨, 완미족발, 공차, 반올림피자, 은구비커피<br>
+                1루 : 바로그집, 선비꼬마김밥, 북촌손만두, 명랑핫도그, 이글스브루어리, 자담치킨, BBQ치킨<br>
+`,
+        floor2: `3루 : 역전우동, 연돈볼카츠, 빽스비어, 새마을식당, 빽보이피자, 고투윅, 한신포차 <br>
+1루 : 1985이닝스, GS25<br>
+중앙 : BBQ치킨, 자담치킨<br>`,
+        floor3: `1루 : GS25
+`,
+        floor4: `3루 : 스플래쉬 ZONE`,
+       
+      };
+
+      // 버튼들 선택
+      const buttons = document.querySelectorAll(".floor_list > div");
+      const contentDiv = document.querySelector(".content_change");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // 모든 버튼에서 active 제거
+          buttons.forEach((btn) => btn.classList.remove("active"));
+
+          // 클릭한 버튼에 active 추가
+          button.classList.add("active");
+
+          // 내용 변경
+          const key = button.classList[0];
+          contentDiv.innerHTML = contentMap[key] || "내용이 없습니다.";
+        });
+      });
+    </script>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.getElementById("menuToggle");
+        const submenu = document.getElementById("submenu");
+
+        let isOpen = false;
+
+        // 메뉴 아이콘 클릭하면 보이게
+        menuIcon.addEventListener("click", (e) => {
+          e.stopPropagation();
+          submenu.style.display = "flex";
+          isOpen = true;
+        });
+
+        // 바깥 클릭 시 숨기기
+        document.addEventListener("click", (e) => {
+          if (isOpen && !submenu.contains(e.target) && e.target !== menuIcon) {
+            submenu.style.display = "none";
+            isOpen = false;
+          }
+        });
+
+        // 메뉴 내부 클릭 시 닫히지 않도록
+        submenu.addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
+      });
+    </script>  
+    
+
+
+</body>
+</html>
