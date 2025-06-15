@@ -165,22 +165,116 @@
         margin-left: 18.5rem;
         margin-right: 18.5rem;
       }
+      .submenu-div {
+  display: none;
+  background: var(--primary-color-1d4d9f, #1d4d9f);
+  padding: 79px 51px 79px 51px;
+  z-index: 10;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 495px;
+  height: 1398px;
+  position: absolute;
+  left: calc(50% - 17px);
+  top: 0px;
+}
+.submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 25.5px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.submenu_title {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 30px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  font-weight: 800;
+  position: relative;
+  align-self: stretch;
+}
+.submenu-rect {
+  background: #ffffff;
+  flex-shrink: 0;
+  width: 388px;
+  height: 6px;
+  position: relative;
+}
+.submenu_text {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  font-weight: 800;
+  position: relative;
+  align-self: stretch;
+}
+.submenu-div .submenu_text-span li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  font-weight: 800;
+}
     </style>
   </head>
   <body>
     <header>
       <h1>BASERUN</h1>
       <div id="head-btn">
-        <a href="main.html"
-          ><img src="/BASERUN2/asset/menu1.svg" style="width: 27px; height: 30px"
-        /></a>
-        <a href="userPage.html"
-          ><img src="/BASERUN2/asset/menu2.svg" style="width: 27px; height: 30px"
-        /></a>
-        <button id="menu-btn" type="button">
-          <img src="/BASERUN2/asset/menu3.svg" style="width: 27px; height: 30px" />
-        </button>
+        <header>
+        <div class="top">
+          <div class="baserun">BASERUN</div>
+          <div class="menu_list">
+            <a href="mainpage.html"><img src="/BASERUN2/asset/menu1.svg" /></a>
+            <a href="userPage.html"><img src="/BASERUN2/asset/menu2.svg" /></a>
+            <img
+              id="menuToggle"
+              class="submenu3"
+              src="/BASERUN2/asset/menu3.svg"
+              style="cursor: pointer"
+            />
+          </div>
+        </div>
+      </header>
       </div>
+      <div>
+        <div class="submenu-div" id="submenu">
+          <div class="submenu">
+            <div class="submenu_title">세부 메뉴</div>
+            <div class="submenu-rect"></div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li><a href="necessary1.html"> 준비물 추천 </a></li>
+              </ul>
+            </div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li>
+                  <a href="/BASERUN2/html/ranking.html">정규 리그 순위</a>
+                </li>
+              </ul>
+            </div>
+            <div class="submenu_text">
+              <ul class="submenu_text-span">
+                <li><a href="/BASERUN2/html/rule.html">야구 기본 규칙</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div>
     </header>
     <h3>자주 찾는 질문</h3>
     <div class="questionContainer">
@@ -228,5 +322,35 @@
         사업자등록번호: 123-45-67890
       </p>
     </footer>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.getElementById("menuToggle");
+        const submenu = document.getElementById("submenu");
+
+        let isOpen = false;
+
+        // 메뉴 아이콘 클릭하면 보이게
+        menuIcon.addEventListener("click", (e) => {
+          e.stopPropagation();
+          submenu.style.display = "flex";
+          isOpen = true;
+        });
+
+        // 바깥 클릭 시 숨기기
+        document.addEventListener("click", (e) => {
+          if (isOpen && !submenu.contains(e.target) && e.target !== menuIcon) {
+            submenu.style.display = "none";
+            isOpen = false;
+          }
+        });
+
+        // 메뉴 내부 클릭 시 닫히지 않도록
+        submenu.addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
+      });
+    </script>  
+    
+
   </body>
 </html>
