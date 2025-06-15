@@ -227,27 +227,22 @@
   letter-spacing: 0.02em;
   font-weight: 800;
 }
+        
     </style>
   </head>
   <body>
     <header>
       <h1>BASERUN</h1>
       <div id="head-btn">
-        <header>
-        <div class="top">
-          <div class="baserun">BASERUN</div>
-          <div class="menu_list">
-            <a href="mainpage.html"><img src="/BASERUN2/asset/menu1.svg" /></a>
-            <a href="userPage.html"><img src="/BASERUN2/asset/menu2.svg" /></a>
-            <img
-              id="menuToggle"
-              class="submenu3"
-              src="/BASERUN2/asset/menu3.svg"
-              style="cursor: pointer"
-            />
-          </div>
-        </div>
-      </header>
+        <a href="mainpage.html"
+          ><img src="/BASERUN2/asset/menu1.svg" style="width: 27px; height: 30px"
+        /></a>
+        <a href="userPage.html"
+          ><img src="/BASERUN2/asset/menu2.svg" style="width: 27px; height: 30px"
+        /></a>
+        <button id="menu-btn" type="button">
+          <img src="/BASERUN2/asset/menu3.svg" style="width: 27px; height: 30px" />
+        </button>
       </div>
       <div>
         <div class="submenu-div" id="submenu">
@@ -274,7 +269,6 @@
           </div>
         </div>
       </div>
-    <div>
     </header>
     <h3>자주 찾는 질문</h3>
     <div class="questionContainer">
@@ -350,7 +344,5 @@
         });
       });
     </script>  
-    
-
   </body>
 </html>
