@@ -78,6 +78,7 @@
         color: #1d4d9f;
       }
       #container {
+        min-width: 650px;
         flex-shrink: 0;
         border-radius: 30px;
         background: #fff;
@@ -86,7 +87,6 @@
         margin-top: 2.02rem;
         margin-left: 18.5rem;
         margin-right: 18.5rem;
-        min-width: 600px;
       }
       ul {
         list-style: none;
@@ -116,6 +116,47 @@
         font-size: 20px;
         margin-bottom: 0.5rem;
       }
+      #necessary-btns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-left: 25.75rem;
+        align-items: center;
+        margin-top: 1.7rem;
+        gap: 0.2rem;
+      }
+      .sub-btn {
+        width: 280px;
+        border: none;
+        height: 2rem;
+        height: 2.71875rem;
+        flex-shrink: 0;
+        border-radius: 1.40625rem;
+        background: #fff;
+        box-shadow: 1.5px 1.5px 15px 3px rgba(209, 209, 209, 0.1);
+        color: var(--primary-color-1-d-4-d-9-f, #1d4d9f);
+        text-align: center;
+        font-family: Inter;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%; /* 1.575rem */
+        letter-spacing: -0.0225rem;
+        cursor: pointer;
+      }
+
+      .sub-btn:hover {
+        color: #fff;
+        background-color: #1d4d9f;
+      }
+
+      .selected {
+        color: #fff;
+        background-color: #1d4d9f;
+      }
+      .unselected {
+        color: #1d4d9f;
+        background-color: #fff;
+      }
       hr {
         height: 4px;
         flex-shrink: 0;
@@ -124,6 +165,7 @@
         margin-left: 17rem;
         margin-right: 17rem;
         margin-top: 3rem;
+        min-width: 700px;
       }
 
       .footer-content {
@@ -138,6 +180,7 @@
         letter-spacing: -0.26px;
         margin-left: 18.5rem;
         margin-right: 18.5rem;
+        min-width: 700px;
       }
       .submenu-div {
   display: none;
@@ -258,6 +301,10 @@
       <button type="button" class="button" id="btn-nec">필수품 추천</button>
       <button type="button" class="button" id="btn-ses">계절별 추천</button>
     </div>
+    <div id="necessary-btns">
+      <button class="sub-btn selected" id="necessary">필수 준비물</button>
+      <button class="sub-btn unselected" id="forbidden">반입 금지 물품</button>
+    </div>
     <div id="container">
       <h2>⚾️ 야구장 필수 준비물 목록 ⚾️</h2>
       <ul>
@@ -296,53 +343,6 @@
           (소곤소곤) 응원봉을 챙기면 몇배로 재밌다는 사실!
         </li>
       </ul>
-      <h2>🚫 야구장 반입 금지 목록 🚫</h2>
-      <ul>
-        <li>
-          <span>가방 및 소지품 규정</span><br />
-          1인당 가방은 1개만 허용되며, 세로 45cm X 폭 20cm 이하 크기여야 합니다!
-          아이스박스(천 소재 제외), 상자 등은 반입이 불가하니 유의해주세요!
-          (추가로 쇼핑백 1개 - 가로 30cm X 세로 50cm X 폭 12cm 이하 - 를 소지할
-          수 있습니다. )
-        </li>
-        <li>
-          <span>위험 물품 및 응원 도구 제한</span><br />
-          - 총기류, 도검류, 폭죽, 화약류, 인화성 물질(부탄가스 등) <br />
-          - 타인에게 위해를 가할 수 있는 칼, 가위 등의 도구 <br />
-          - 깃발, 막대, 삼각대 등 타격용으로 사용될 위험이 있는 물품 - 앰프,
-          대북 , 꽹가리, 부부젤라 등 소음 유발 응원 도구 <br />
-          - 구단과 합의되지 않은 현수막, 레이저 포인터, 풍선, 드론 - 킥보드,
-          돗자리, 휴대용 의자 등 다른 관람객의 통행을 방해하는 물품
-        </li>
-        <li>
-          <span>음식물 및 주류 반입 규정</span> <br />
-          <span style="font-size: 17px; color: #000; font-weight: 600"
-            >음식물 반입 기준</span
-          ><br />
-          - 유리병에 담긴 음식물은 반입 불가, 플라스틱 용기 권장<br />
-          - 자르지 않은 과일은 투척 위험으로 제한 가능, 손질하여 밀폐 용기에
-          담기 권장 <br />
-          - 냄새가 심하거나 과도한 양, 국물 있는 음식은 제한가능 <br />
-          - 유아용 젖병, 종이팩 음료, 의약품은 반입 가능<br />
-          <br />
-          <span style="font-size: 17px; color: #000; font-weight: 600"
-            >주류 반입 기준</span
-          >
-          <br />
-          - 맥주: 1인당 1L 이하 페트병 또는 캔 맥주 1개(또는 500ml 캔 2개)
-          허용<br />
-          - 소주 및 5% 초과 주류(막걸리, 청주, 와인 등) 반입 금지 <br />
-          - 유리병에 담긴 주류는 어떤 경우에도 반입 불가 <br />
-          - 경기장 내 주류 구매 시 1인당 구매량 제한 있을 수 있음 - 8회말 이후
-          주류 판매 중단될 수 있음
-        </li>
-        <li>
-          <span style="margin-top: 10px"
-            >각 구장 별로 세부 규정이 다를 수 있기에 방문 전 해당 구단
-            홈페이지에서 정확한 정보를 확인하시는 것을 적극 추천드립니다!</span
-          >
-        </li>
-      </ul>
     </div>
     <footer>
       <hr />
@@ -356,6 +356,155 @@
       document.getElementById("btn-ses").onclick = () => {
         location.href = "necessary2.html";
       };
+      const necessary = document.getElementById("necessary");
+      const forbidden = document.getElementById("forbidden");
+      const container = document.getElementById("container");
+
+      necessary.addEventListener("click", function () {
+        necessary.classList.remove("selected", "unselected");
+        forbidden.classList.remove("selected", "unselected");
+        necessary.classList.add("selected");
+        forbidden.classList.add("unselected");
+
+        container.innerHTML = `
+        <h2>⚾️ 야구장 필수 준비물 목록 ⚾️</h2>
+      <ul>
+        <li>
+          <span>야구장 티켓 </span><br />
+          야구장 입장 시 필요(좌석 정보 미리 확인하여 좌석과 가까운 곳에서 티켓
+          확인 받기!)
+        </li>
+        <li>
+          <span>편안한 옷과 신발</span><br />
+          응원을 위해 편한 옷과 신발을 착용하는 것을 추천해요
+        </li>
+        <li>
+          <span>간식과 물 </span><br />
+          티켓 검사시 음료와 물을 제한하지 않으니 간단한 물과 과자같은 것은
+          챙겨가는 걸 추천!<br />
+          (야구장 안에도 편의점이 있으나 원하는 제품이 없을 수 있어요!)
+        </li>
+        <li>
+          <span>물티슈</span><br />
+          야구장의 별미는 바로 음식!! 근데 먹다 흘렸을 때.. 손이 더러워졌을 때..
+          물티슈가 있으면 좋겠죠? 좌석이 더럽다면 좌석을 닦을 때도 도움이 돼요!
+        </li>
+        <li>
+          <span>보조 배터리</span><br />
+          혹시 모를 배터리 방전 상황을 대비해 꼭꼭 챙겨주기~
+        </li>
+        <li>
+          <span>우산, 우비</span><br />
+          혹시 모를 비!!를 대비해 날씨 확인 후 챙겨주세요~ 특히 여름철에는 혹시
+          모르니 접이식 우산 챙겨주기!
+        </li>
+        <li>
+          <span>응원하는 팀의 유니폼, 응원도구</span><br />
+          응원은 템빨!! 응원하는 팀의 유니폼을 입고 신나게 응원을 즐기세요!!
+          (소곤소곤) 응원봉을 챙기면 몇배로 재밌다는 사실!
+        </li>
+      </ul>
+        `;
+      });
+
+      forbidden.addEventListener("click", function () {
+        necessary.classList.remove("selected", "unselected");
+        forbidden.classList.remove("selected", "unselected");
+        forbidden.classList.add("selected");
+        necessary.classList.add("unselected");
+
+        container.innerHTML = `
+        <h2>🚫 야구장 반입 금지 목록 🚫</h2>
+        <ul>
+          <li>
+            <span>가방 및 소지품 규정</span><br />
+            1인당 가방은 1개만 허용되며, 세로 45cm X 폭 20cm 이하 크기여야 합니다!
+            아이스박스(천 소재 제외), 상자 등은 반입이 불가하니 유의해주세요!
+            (추가로 쇼핑백 1개 - 가로 30cm X 세로 50cm X 폭 12cm 이하 - 를 소지할
+            수 있습니다. )
+          </li>
+          <li>
+            <span>위험 물품 및 응원 도구 제한</span><br />
+            - 총기류, 도검류, 폭죽, 화약류, 인화성 물질(부탄가스 등) <br />
+            - 타인에게 위해를 가할 수 있는 칼, 가위 등의 도구 <br />
+            - 깃발, 막대, 삼각대 등 타격용으로 사용될 위험이 있는 물품 - 앰프,
+            대북 , 꽹가리, 부부젤라 등 소음 유발 응원 도구 <br />
+            - 구단과 합의되지 않은 현수막, 레이저 포인터, 풍선, 드론 - 킥보드,
+            돗자리, 휴대용 의자 등 다른 관람객의 통행을 방해하는 물품
+          </li>
+          <li>
+            <span>음식물 및 주류 반입 규정</span> <br />
+            <span style="font-size: 17px; color: #000; font-weight: 600"
+              >음식물 반입 기준</span
+            ><br />
+            - 유리병에 담긴 음식물은 반입 불가, 플라스틱 용기 권장<br />
+            - 자르지 않은 과일은 투척 위험으로 제한 가능, 손질하여 밀폐 용기에
+            담기 권장 <br />
+            - 냄새가 심하거나 과도한 양, 국물 있는 음식은 제한가능 <br />
+            - 유아용 젖병, 종이팩 음료, 의약품은 반입 가능<br />
+            <br />
+            <span style="font-size: 17px; color: #000; font-weight: 600"
+              >주류 반입 기준</span
+            >
+            <br />
+            - 맥주: 1인당 1L 이하 페트병 또는 캔 맥주 1개(또는 500ml 캔 2개)
+            허용<br />
+            - 소주 및 5% 초과 주류(막걸리, 청주, 와인 등) 반입 금지 <br />
+            - 유리병에 담긴 주류는 어떤 경우에도 반입 불가 <br />
+            - 경기장 내 주류 구매 시 1인당 구매량 제한 있을 수 있음 - 8회말 이후
+            주류 판매 중단될 수 있음
+          </li>
+          <li>
+            <span style="margin-top: 10px"
+              >각 구장 별로 세부 규정이 다를 수 있기에 방문 전 해당 구단
+              홈페이지에서 정확한 정보를 확인하시는 것을 적극 추천드립니다!</span
+            >
+          </li>
+        </ul>
+        `;
+      });
+
+      autumn.addEventListener("click", function () {
+        spring.classList.remove("selected", "unselected");
+        summer.classList.remove("selected", "unselected");
+        autumn.classList.remove("selected", "unselected");
+        autumn.classList.add("selected");
+        spring.classList.add("unselected");
+        summer.classList.add("unselected");
+
+        container.innerHTML = `
+        <ul>
+          <span style = "color: #000; margin-bottom: 30px">이걸 보고 계신 분들은 가을 야구 진출에 성공하셨겠죠?! 🥳 축하드립니다! 한국시리즈까지 파이팅~ 😎</span></li>
+          <li>
+            <span>두꺼운 담요</span><br />
+            10월쯤 가면 꽤 쌀쌀해요! 혹시 모르니 챙겨주기!(많이 두껍지 않아도 괜찮아요)
+          </li>
+          <li>
+            <span>후드 집업 등 두꺼운 겉옷</span><br />
+            밤 경기라면 생각보다 더 추울 수 있으니 챙겨주세요!(야구점퍼가 있다면 그것도 좋아요!)
+          </li>
+          <li>
+            <span>핫팩</span><br />
+            가을이라고 방심 금물! 응원하다 손이 시릴 수 있으니 챙겨주기~ (실제로 매우매우 유용하니 꼬옥 챙기기)
+          </li>
+          <li>
+            <span>보온이 되는 텀블러 + 따뜻한 물</span><br />
+            따뜻한 물이 필요할 수 있으니 챙겨가는 걸 추천해요!
+          </li>
+          <li>
+            <span>따뜻한 음식</span><br />
+            가을 야구 직관하면서 어묵을 먹는 게.. 그렇게 맛나대요!(소곤소곤) 또한 따뜻한 음식을 먹으면 몸이 따뜻해져 추위를 조금이라도 덜 수 있답니다!
+          </li>
+          <li>
+            <span style="margin-top: 10px; line-height: 1.7rem; color: #0f2750"
+              >계절에 맞는 준비물이라도 그날의 날씨, 바람, 습도에 따라 달라질 수
+              있으니, <br />
+              꼭 당일 날씨를 먼저 확인하고 알맞게 챙겨주세요!</span
+            >
+          </li>
+        </ul>
+        `;
+      });
     </script>
     <script>
       window.addEventListener("DOMContentLoaded", () => {
