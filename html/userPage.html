@@ -120,20 +120,20 @@
         };
 
         const logoMap = {
-          lotte: "/BASERUN2/asset/giants.svg",
-          doosan: "/BASERUN2/asset/doosan.svg",
-          hanhwa: "/BASERUN2/asset/eagles.svg",
-          kia: "/BASERUN2/asset/kia.svg",
-          kiwoon: "/BASERUN2/asset/kiwoom.svg",
-          kt: "/BASERUN2/asset/kt.svg",
-          lg: "/BASERUN2/asset/LG.svg",
-          nc: "/BASERUN2/asset/NC.svg",
-          samsung: "/BASERUN2/asset/samsung.svg",
-          ssg: "/BASERUN2/asset/ssg.svg",
+          lotte: "../asset/giants.svg",
+          doosan: "../asset/doosan.svg",
+          hanhwa: "../asset/eagles.svg",
+          kia: "../asset/kia.svg",
+          kiwoon: "../asset/kiwoom.svg",
+          kt: "../asset/kt.svg",
+          lg: "../asset/LG.svg",
+          nc: "../asset/NC.svg",
+          samsung: "../asset/samsung.svg",
+          ssg: "../asset/ssg.svg",
         };
 
         if (team && nameMap[team] && logoMap[team]) {
-          setCookie("team", team, 365);
+          setCookie("team", team, 1);
           document.getElementById("choice").innerText =
             "선택구단: " + nameMap[team];
           const imgContainer = document.getElementById("logo");
