@@ -171,35 +171,41 @@
             setCookie("username", inputUsername, 1);
             usernameElement.innerText = "이름: " + inputUsername;
           } else {
-            usernameElement.innerText = "이름: " + username;
+            const latestUsername = getCookie("username");
+            if (latestUsername) {
+              usernameElement.innerText = "이름: " + latestUsername;
+            } else {
+              usernameElement.innerText = "이름을 입력하지 않으셨습니다.";
+            }
           }
           const inputEmail = prompt(
             "이메일을 입력해주세요 (예: example@gmail.com)"
           );
-          if (email) {
-            if (inputEmail) {
+          if (inputEmail) {
             setCookie("email", inputEmail, 1);
             emailElement.innerText = "이메일: " + inputEmail;
           } else {
-            emailElement.innerText = "이메일: " + email;
-          }
-          }
-          else {
-            emailElement.innerText = "이메일을 입력하지 않으셨습니다.";
+            const latestEmail = getCookie("email");
+            if (latestEmail) {
+              emailElement.innerText = "이메일: " + latestEmail;
+            } else {
+              emailElement.innerText = "이메일을 입력하지 않으셨습니다.";
+            }
           }
           const inputPhone = prompt(
             "전화번호를 입력해주세요 (예: 010-1234-5678)"
           );
-          if(phone) {
-            if (inputPhone) {
+          if (inputPhone) {
             setCookie("phone", inputPhone, 1);
             phoneElement.innerText = "전화번호: " + inputPhone;
           } else {
-            phoneElement.innerText = "전화번호: " + phone;
-          }
-          }
-          else {
-            phoneElement.innerText = "전화번호를 입력하지 않으셨습니다.";
+            // 최신 쿠키에서 직접 다시 읽기
+            const latestPhone = getCookie("phone");
+            if (latestPhone) {
+              phoneElement.innerText = "전화번호: " + latestPhone;
+            } else {
+              phoneElement.innerText = "전화번호를 입력하지 않으셨습니다.";
+            }
           }
         });
       };
