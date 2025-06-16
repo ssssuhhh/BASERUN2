@@ -190,12 +190,13 @@
           const inputPhone = prompt(
             "전화번호를 입력해주세요 (예: 010-1234-5678)"
           );
-          if (inputPhone) {
+          if(phone) {
+            if (inputPhone) {
             setCookie("phone", inputPhone, 1);
             phoneElement.innerText = "전화번호: " + inputPhone;
-          }
-          else if(phone) {
+          } else {
             phoneElement.innerText = "전화번호: " + phone;
+          }
           }
           else {
             phoneElement.innerText = "전화번호를 입력하지 않으셨습니다.";
