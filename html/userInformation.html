@@ -4,22 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>회원 정보</title>
-  <link rel="stylesheet" href="/BASERUN2/css/userInformation.css">
+  <link rel="stylesheet" href="../css/userInformation.css">
 </head>
 <body>
   <header>
     <h1>BASERUN</h1>
     <div id="head-btn">
       <a href="mainpage.html"
-        ><img src="/BASERUN2/asset/home.svg" style="width: 27px; height: 30px"
+        ><img src="../asset/home.svg" style="width: 27px; height: 30px"
       /></a>
       <a href="userPage.html"
-        ><img src="/BASERUN2/asset/mypage.svg" style="width: 27px; height: 30px"
+        ><img src="../asset/mypage.svg" style="width: 27px; height: 30px"
       /></a>
       <button id="menu-btn" type="button">
         <img id="menuToggle"
               class="submenu3"
-              src="/BASERUN2/asset/menu.svg" style="width: 27px; height: 30px" />
+              src="../asset/menu.svg" style="width: 27px; height: 30px" />
       </button>
     </div>
   </header>
@@ -36,13 +36,13 @@
             <div class="submenu_text">
               <ul class="submenu_text-span">
                 <li>
-                  <a href="/BASERUN2/html/ranking.html">정규 리그 순위</a>
+                  <a href="ranking.html">정규 리그 순위</a>
                 </li>
               </ul>
             </div>
             <div class="submenu_text">
               <ul class="submenu_text-span">
-                <li><a href="/BASERUN2/html/rule.html">야구 기본 규칙</a></li>
+                <li><a href="rule.html">야구 기본 규칙</a></li>
               </ul>
             </div>
           </div>
@@ -134,7 +134,7 @@
             "이메일을 입력해주세요 (예: example@gmail.com)"
           );
           if (inputEmail) {
-            setCookie("email", inputEmail, 365);
+            setCookie("email", inputEmail, 1);
             emailElement.innerText = "이메일: " + inputEmail;
           } else {
             emailElement.innerText = "이메일을 입력하지 않으셨습니다";
@@ -149,9 +149,12 @@
             "전화번호를 입력해주세요 (예: 010-1234-5678)"
           );
           if (inputPhone) {
-            setCookie("phone", inputPhone, 365);
+            setCookie("phone", inputPhone, 1);
             phoneElement.innerText = "전화번호: " + inputPhone;
-          } else {
+          } else if(phone) {
+            phoneElement.innerText = "전화번호: " + phone;
+          } 
+          else {
             phoneElement.innerText = "전화번호를 입력하지 않으셨습니다";
           }
         } else {
@@ -165,27 +168,36 @@
         editBtn.addEventListener("click", function () {
           const inputUsername = prompt("이름을 입력해주세요");
           if (inputUsername) {
-            setCookie("username", inputUsername, 365);
+            setCookie("username", inputUsername, 1);
             usernameElement.innerText = "이름: " + inputUsername;
           } else {
-            usernameElement.innerText = "이름을 입력하지 않으셨습니다.";
+            usernameElement.innerText = "이름: " + username;
           }
           const inputEmail = prompt(
             "이메일을 입력해주세요 (예: example@gmail.com)"
           );
-          if (inputEmail) {
-            setCookie("email", inputEmail, 365);
+          if (email) {
+            if (inputEmail) {
+            setCookie("email", inputEmail, 1);
             emailElement.innerText = "이메일: " + inputEmail;
           } else {
+            emailElement.innerText = "이메일: " + email;
+          }
+          }
+          else {
             emailElement.innerText = "이메일을 입력하지 않으셨습니다.";
           }
           const inputPhone = prompt(
             "전화번호를 입력해주세요 (예: 010-1234-5678)"
           );
           if (inputPhone) {
-            setCookie("phone", inputPhone, 365);
+            setCookie("phone", inputPhone, 1);
             phoneElement.innerText = "전화번호: " + inputPhone;
-          } else {
+          }
+          else if(phone) {
+            phoneElement.innerText = "전화번호: " + phone;
+          }
+          else {
             phoneElement.innerText = "전화번호를 입력하지 않으셨습니다.";
           }
         });
@@ -205,20 +217,20 @@
         };
 
         const logoMap = {
-          lotte: "/BASERUN2/asset/giants.svg",
-          doosan: "/BASERUN2/asset/doosan.svg",
-          hanhwa: "/BASERUN2/asset/eagles.svg",
-          kia: "/BASERUN2/asset/kia.svg",
-          kiwoon: "/BASERUN2/asset/kiwoom.svg",
-          kt: "/BASERUN2/asset/kt.svg",
-          lg: "/BASERUN2/asset/LG.svg",
-          nc: "/BASERUN2/asset/NC.svg",
-          samsung: "/BASERUN2/asset/samsung.svg",
-          ssg: "/BASERUN2/asset/ssg.svg",
+          lotte: "../asset/giants.svg",
+          doosan: "../asset/doosan.svg",
+          hanhwa: "../asset/eagles.svg",
+          kia: "../asset/kia.svg",
+          kiwoon: "../asset/kiwoom.svg",
+          kt: "../asset/kt.svg",
+          lg: "../asset/LG.svg",
+          nc: "../asset/NC.svg",
+          samsung: "../asset/samsung.svg",
+          ssg: "../asset/ssg.svg",
         };
 
         if (team && nameMap[team] && logoMap[team]) {
-          setCookie("team", team, 365);
+          setCookie("team", team, 1);
           document.getElementById("choice").innerText =
             "선택구단: " + nameMap[team];
           const imgContainer = document.getElementById("img");
