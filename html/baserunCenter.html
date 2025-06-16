@@ -10,11 +10,8 @@
       }
       header {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         padding-left: 18.5em;
-        padding-right: 18.5rem;
-        min-width: 700px;
       }
       h1 {
         color: #000;
@@ -25,11 +22,13 @@
         font-weight: 800;
         line-height: 140%; /* 57.75px */
         letter-spacing: -0.825px;
+        padding-right: 34rem;
       }
       #head-btn {
         display: flex;
         align-items: center;
         gap: 21px;
+        padding-right: 1rem;
       }
       #menu-btn {
         border: none;
@@ -104,12 +103,12 @@
         min-width: 680px;
       }
       h4 {
-        color: #000;
         font-size: 24px;
         margin-top: 10px;
         margin-left: 10px;
       }
       p {
+        color: #000;
         font-size: 20px;
         margin-top: 10px;
         margin-left: 10px;
@@ -166,68 +165,67 @@
         margin-right: 18.5rem;
       }
       .submenu-div {
-  display: none;
-  background: var(--primary-color-1d4d9f, #1d4d9f);
-  padding: 79px 51px 79px 51px;
-  z-index: 10;
-  flex-direction: column;
-  gap: 0px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  width: 495px;
-  height: 1000px;
-  position: absolute;
-  left: calc(50% - 17px);
-  top: 0px;
-}
-.submenu {
-  display: flex;
-  flex-direction: column;
-  gap: 25.5px;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  position: relative;
-}
-.submenu_title {
-  color: #ffffff;
-  text-align: left;
-  font-family: "Inter-ExtraBold", sans-serif;
-  font-size: 30px;
-  line-height: 140%;
-  letter-spacing: 0.02em;
-  font-weight: 800;
-  position: relative;
-  align-self: stretch;
-}
-.submenu-rect {
-  background: #ffffff;
-  flex-shrink: 0;
-  width: 388px;
-  height: 6px;
-  position: relative;
-}
-.submenu_text {
-  color: #ffffff;
-  text-align: left;
-  font-family: "Inter-ExtraBold", sans-serif;
-  font-size: 20px;
-  line-height: 140%;
-  letter-spacing: 0.02em;
-  font-weight: 800;
-  position: relative;
-  align-self: stretch;
-}
-.submenu-div .submenu_text-span li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-family: "Inter-ExtraBold", sans-serif;
-  font-size: 20px;
-  line-height: 140%;
-  letter-spacing: 0.02em;
-  font-weight: 800;
-}
-        
+        display: none;
+        background: var(--primary-color-1d4d9f, #1d4d9f);
+        padding: 79px 51px 79px 51px;
+        z-index: 10;
+        flex-direction: column;
+        gap: 0px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 495px;
+        height: 1000px;
+        position: absolute;
+        left: calc(50% - 17px);
+        top: 0px;
+      }
+      .submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 25.5px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .submenu_title {
+        color: #ffffff;
+        text-align: left;
+        font-family: "Inter-ExtraBold", sans-serif;
+        font-size: 30px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        font-weight: 800;
+        position: relative;
+        align-self: stretch;
+      }
+      .submenu-rect {
+        background: #ffffff;
+        flex-shrink: 0;
+        width: 388px;
+        height: 6px;
+        position: relative;
+      }
+      .submenu_text {
+        color: #ffffff;
+        text-align: left;
+        font-family: "Inter-ExtraBold", sans-serif;
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        font-weight: 800;
+        position: relative;
+        align-self: stretch;
+      }
+      .submenu-div .submenu_text-span li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Inter-ExtraBold", sans-serif;
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        font-weight: 800;
+      }
     </style>
   </head>
   <body>
@@ -235,18 +233,21 @@
       <h1>BASERUN</h1>
       <div id="head-btn">
         <a href="mainpage.html"
-          ><img src="/BASERUN2/asset/home.svg" style="width: 27px; height: 30px"
+          ><img src="../asset/home.svg" style="width: 27px; height: 30px"
         /></a>
-      <a href="userPage.html"
-        ><img src="/BASERUN2/asset/mypage.svg" style="width: 27px; height: 30px"
-      /></a>
-      <button id="menu-btn" type="button">
-        <img id="menuToggle"
-              class="submenu3"
-              src="/BASERUN2/asset/menu.svg" style="width: 27px; height: 30px" />
-      </button>
-    </div>
-    <div>
+        <a href="userPage.html"
+          ><img src="../asset/mypage.svg" style="width: 27px; height: 30px"
+        /></a>
+        <button id="menu-btn" type="button">
+          <img
+            id="menuToggle"
+            class="submenu3"
+            src="../asset/menu.svg"
+            style="width: 27px; height: 30px"
+          />
+        </button>
+      </div>
+      <div>
         <div class="submenu-div" id="submenu">
           <div class="submenu">
             <div class="submenu_title">세부 메뉴</div>
@@ -259,13 +260,13 @@
             <div class="submenu_text">
               <ul class="submenu_text-span">
                 <li>
-                  <a href="/BASERUN2/html/ranking.html">정규 리그 순위</a>
+                  <a href="ranking.html">정규 리그 순위</a>
                 </li>
               </ul>
             </div>
             <div class="submenu_text">
               <ul class="submenu_text-span">
-                <li><a href="/BASERUN2/html/rule.html">야구 기본 규칙</a></li>
+                <li><a href="rule.html">야구 기본 규칙</a></li>
               </ul>
             </div>
           </div>
@@ -318,7 +319,7 @@
         사업자등록번호: 123-45-67890
       </p>
     </footer>
-     <script>
+    <script>
       window.addEventListener("DOMContentLoaded", () => {
         const menuIcon = document.getElementById("menuToggle");
         const submenu = document.getElementById("submenu");
