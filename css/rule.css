@@ -161,7 +161,7 @@
   padding-right: 10px;
 }
 .rule_content {
-  color: var(--primary-color-1d4d9f, #1d4d9f);
+  color: var(--primary-color-1d4d9f, #000);
   text-align: left;
   font-family: "Inter-Bold", sans-serif;
   font-size: 18px;
@@ -256,4 +256,7 @@
   background: #1d4d9f;
   color: #fff;
   box-shadow: 1.46px 1.46px 14.57px 2.91px rgba(209, 209, 209, 0.1);
+}
+span {
+  color: #1d4d9f;
 }
